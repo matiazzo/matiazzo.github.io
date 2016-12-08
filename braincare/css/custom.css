@@ -47,3 +47,20 @@
 }
 
 .overlay, #googleMap {height: 300px; border: none;}
+
+@media screen and (min-width:45em){
+	.bitter-ns {
+		font-family: 'Bitter', serif;
+		font-weight: 400;
+	}
+
+	.firaRegular-ns {
+		font-family: 'Fira Sans', sans-serif;
+		font-weight: 400;
+	}
+
+	.firaLight-ns {
+		font-family: 'Fira Sans', sans-serif;
+		font-weight: 300;
+	}
+}
