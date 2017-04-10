@@ -44,8 +44,8 @@
     },
     {
       "component": "header",
-      "heading": "matiazzo.github.io",
-      "subhead": "Personal repository",
+      "heading": "andré matiazzo",
+      "subhead": "testing compositor",
       "children": [
         {
           "component": "ui/TweetButton",
