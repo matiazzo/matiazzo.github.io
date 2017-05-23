@@ -1,0 +1,11 @@
+email: matiazzoandre@gmail.com
+fullname: 'André Matiazzo'
+title: admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$6en/iAKZKLq0aVLk5AB0YOrZd4iD8po15Td4pmR9BJf4QljviGspC
