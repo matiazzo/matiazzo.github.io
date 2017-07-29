@@ -62,45 +62,119 @@
 		* {margin: 0;}
 		body {
 			background: #FFFCFB;
-			background-image: url(img/bg.png);
+			background-image: url(../img/bg.png);
 			background-attachment: fixed;
 			font-family: 'Work Sans', sans-serif;
 		}
-		.accent {color: #FDA88A;}
+		.accent {color: #ff9778;}
 	</style>
 </head>
 <body class="dark-gray">
 	<!-- Presentation -->
-	<section class="pa5">
-		<section class="fl pt5 w-100 dark-gray mw9">
+	<section class="fl w-100 ph5 pv6">
+		<div class="fl w-100 dark-gray mw9">
 			<h1 class="fl w-100 f5 mv0 tracked-mega ttu">André Matiazzo</h1>
-			<p class="fl mt6 f5 lh-copy measure-narrow">
-				Designer de interfaces na <a class="accent" href="https://www.movile.com/pt/">Movile</a>.
+			<p class="fl mt5 f5 lh-copy measure-narrow">
+				Designer de interfaces na <a class="accent dim" href="https://www.movile.com/pt/">Movile</a>.
 			</p>
 			<p class="fl cl f5 lh-copy measure-narrow">
 				Me interessam o design como sistema, o potencial da web e o apagamento de fronteiras entre o digital e o impresso.
 			</p>
-			<!-- Nav -->
-			<nav class="fl mt5 cb">
-				<ul class="list fl pl0">
-					<li class="fl mr4"><a href="#projetos" class="accent ttu tracked link f6">Projetos</a></li>
-					<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link f6">Newsletter</a></li>
-					<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link f6">CV</a></li>
-					<li class="fr mr4"><a href="mailto:oi@andrematiazzo.com" class="black-50 link">o@andrematiazzo.com</a></li>
-				</ul>
-			</nav>
-		</section>
+		</div>
+		<!-- Email -->
+		<div class="fl w-50 mt5">
+			<a href="mailto:oi@andrematiazzo.com" class="fl link dim black-50">oi@andrematiazzo.com</a>
+		</div>
+		<!-- Nav -->
+		<nav class="fl w-50 mt5">
+			<ul class="list fl pl0">
+				<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">Newsletter</a></li>
+				<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">Leituras</a></li>
+				<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">CV</a></li>
+			</ul>
+		</nav>
 		<!-- Projetos intro -->
-		<section class="fl w-100 mw9 pt5 mt6" id="projetos">
+		<div class="fl w-100 mw9 mt6 pt4" id="projetos">
 			<div class="fr w-50">
-				<h2 class="fl w-100">Projetos até agora</h2>
-				<p class="fl cl f5 lh-copy measure mt2">
-					Não tenho uma carreira extensa a ponto de resumir tudo que fiz até hoje em Grandes Projetos. O que pretendo aqui é mais modesto: te mostrar o que tenho feito, o que já fiz e o que me interessa para o futuro.</p>
+				<h2 class="fl f-headline w-100">Projetos</h2>
+			</div>
+		</div>
+		<!-- Projetos: Pickers -->
+		<section class="fl w-100 mt5">
+			<img src="../img/pickers.png" alt="App Pickers">
+			<!-- Project infos -->
+			<div class="fl w-100">
+				<span class="black-50">2016 até hoje</span>
+				<h3 class="f2 mt3">Pickers</h3>
+				<div class="fl w-100 mt3">
+					<p class="fl lh-copy measure pr5">
+						Um app de pesquisas para indecisos. Você escolhe entre fotos, vídeos e GIFs para montar um mosaico, faz sua pergunta e a comunidade dos Pickers te ajuda a escolher. App híbrido para iOS e Android.
+					</p>
+					<ul class="fl pl0 list lh-copy black-50">
+						<li class="b black ttu tracked f6">O que fiz</li>
+						<li class="mt1">Interações</li>
+						<li class="mt1">Identidade visual</li>
+						<li class="mt1">Interface</li>
+					</ul>
+				</div>
 			</div>
 		</section>
-		<section class="fl w-100 mt6">
-			<img src="img/pickers.png" alt="">
+
+		<!-- Projetos: DiaTipo Campinas -->
+		<section class="fl w-100 mt6 flex items-end">
+			<div class="fl w-60">
+				<img src="../img/diatipo.png" alt="DiaTipo Campinas" class="db w-100">
+			</div>
+			<!-- Project infos -->
+			<div class="fl w-40 pl5">
+				<span class="black-50">2016</span>
+				<h3 class="f2 mt3">DiaTipo</h3>
+				<div class="fr w-100 mt3">
+					<p class="fl lh-copy measure-narrow">
+						Site para a edição de 2016 do evento de tipografia DiaTipo Campinas.
+					</p>
+					<ul class="fl pl0 list lh-copy black-50 cl mt4">
+						<li class="b black ttu tracked f6">O que fiz</li>
+						<li class="mt1">Identidade visual</li>
+						<li class="mt1">Interface</li>
+						<li class="mt1">Front-end</li>
+					</ul>
+					<a href="http://www.diatipo.com.br/campinas/" target="_blank" class="fl mt4 dim dib accent cb">Veja online &#10169;</a>
+				</div>
+			</div>
 		</section>
+
+		<!-- Projetos: Playkids -->
+		<section class="fl w-100 mt6">
+			<!-- Project infos -->
+			<div class="fl w-40">
+				<span class="black-50">2015</span>
+				<h3 class="f2 mt3">PlayKids</h3>
+				<div class="fr w-100 mt3">
+					<p class="fl lh-copy measure pr5">
+						Front-end para o antigo site da PlayKids e adaptação da interface (feita pelo <a href="http://www.maksonserpa.com.br/" class="accent" target="_blank">Makson Serpa</a>) para as versões de tablets e smartphones.
+					</p>
+					<ul class="fl pl0 list lh-copy black-50 cl mt4">
+						<li class="b black ttu tracked f6">O que fiz</li>
+						<li class="mt1">Front-end</li>
+						<li class="mt1">Interface</li>
+					</ul>
+				</div>
+			</div>
+			<div class="fl w-60">
+				<img src="../img/playkids.png" alt="PlayKids" class="db w-100">
+			</div>
+		</section>
+
+
 	</section>
+
+	<!-- Rerence grid -->
+	<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
+		<div class="fl w-25 bl br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+	</div>
 </body>
 </html>
