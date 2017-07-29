@@ -67,33 +67,35 @@
 			font-family: 'Work Sans', sans-serif;
 		}
 		.accent {color: #ff9778;}
-		.page-title {padding-left: 40%;}
+		@media screen and (min-width: 480px) {
+			.page-title {padding-left: 40%;}
+		}
 	</style>
 </head>
 <body class="dark-gray">
 	<!-- Wrapper -->
 	<main class="center pa4 pa5-ns pv5-ns mw9">
 		<!-- Presentation & Nav-->
-		<div class="flex">
+		<div class="flex-ns">
 			<!-- Presentation -->
 			<div class="w-40-ns">
 				<h1 class="f5 mv0 tracked-mega ttu">André Matiazzo</h1>
-				<p class="mt5 f5 lh-copy measure-narrow">
+				<p class="mt4 mt5-ns f5 lh-copy measure-narrow-ns">
 					Designer de interfaces na <a class="accent dim" href="https://www.movile.com/pt/">Movile</a>.
 				</p>
-				<p class="f5 lh-copy measure-narrow">
+				<p class="f5 lh-copy measure-narrow-ns">
 					Me interessam o design como sistema, o potencial da web e o apagamento de fronteiras entre o digital e o impresso.
 				</p>
-				<div class="fl-ns mt5 w-50">
+				<div class="mt4 mt5-ns w-50">
 					<a href="mailto:oi@andrematiazzo.com" class="link dim black-50">oi@andrematiazzo.com</a>
 				</div>
 			</div>
 			<!-- Nav -->
-			<nav class="w-60 self-end">
-				<ul class="list pl0">
-					<li class="fl mr4"><a href="/newsletter" class="accent ttu tracked link dim f6">Newsletter</a></li>
-					<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">Leituras</a></li>
-					<li class="fl mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">CV</a></li>
+			<nav class="mt5 mt0-ns w-60-ns self-end-ns">
+				<ul class="list pl0 flex">
+					<li class="mr4"><a href="/newsletter" class="accent ttu tracked link dim f6">Newsletter</a></li>
+					<li class="mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">Leituras</a></li>
+					<li class="mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">CV</a></li>
 				</ul>
 			</nav>
 		</div>
