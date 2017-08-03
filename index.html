@@ -67,41 +67,44 @@
 			font-family: 'Work Sans', sans-serif;
 		}
 		.accent {color: #ff9778;}
-		@media screen and (min-width: 480px) {
-			.pl-40 {padding-left: 40%;}
+		@media screen and (min-width: 45rem) {
+
 		}
 	</style>
 </head>
 <body class="dark-gray">
 	<!-- Wrapper -->
-	<main class="center pv5 ph4 pa5-ns mw9">
+	<main class="center pv5 ph4 ph4-m pa5-ns mw9">
 		<!-- Presentation & Nav-->
-		<div class="flex-ns">
+		<div class="flex-column-m flex-ns">
 			<!-- Presentation -->
-			<div class="w-50-ns mw6">
+			<div class="w-100 w-80-m w-50-ns mw6">
 				<h1 class="f5 mv0 tracked-mega ttu">André Matiazzo</h1>
-				<p class="mt4 mt5-ns f5 lh-copy measure-narrow-ns">
+				<p class="mt4 mt4-m mt5-ns f5 lh-copy measure-narrow-ns">
 					Designer de interfaces na <a class="accent dim" href="https://www.movile.com">Movile</a>.
 				</p>
 				<p class="f5 lh-copy measure-narrow-ns">
 					Me interessam o design como sistema, o potencial da web e o apagamento de fronteiras entre o digital e o impresso.
 				</p>
-				<div class="mt4 mt5-ns w-50">
+				<div class="mt4 mt4-m mt5-ns w-50">
 					<a href="mailto:oi@andrematiazzo.com" class="link dim black-50">oi@andrematiazzo.com</a>
 				</div>
 			</div>
 			<!-- Nav -->
-			<nav class="mt6 mt0-ns w-60-ns self-end-ns">
-				<ul class="list pl0 flex">
-					<li class="mr4"><a href="javascript:;" class="accent ttu tracked link dim f6 pb1 bb">Projetos</a></li>
-					<li class="mr4"><a href="/escrita" class="accent ttu tracked link dim f6">Escrita</a></li>
-					<li class="mr4"><a href="javascript:;" class="accent ttu tracked link dim f6">Leituras</a></li>
+			<nav class="mt6 mt5-m mt0-ns w-100-m w-50-ns self-end-ns">
+				<ul class="list pl0 flex-ns">
+					<li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6 pb1 bb">Projetos</a></li>
+					<li class="mr4"><a href="/escrita" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6">Escrita</a></li>
+					<li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6">Leituras</a></li>
 				</ul>
 			</nav>
 		</div>
 
 		<!-- Título da Página -->
-		<h2 class="pl7-ns ml7-ns mt4 mt5-ns f1 f-headline-ns">Projetos</h2>
+		<div class="flex-ns">
+		<div class="w-50-ns mw6 dn dn-m db-ns"></div>
+			<h2 class="w-100-m w-50-ns mt4 mt5-ns f1 f1-m f-headline-ns">Projetos</h2>
+		</div>
 
 		<!-- Projetos: Pickers -->
 		<section class="mt4">
@@ -109,14 +112,14 @@
 				<img src="../img/pickers.png" alt="App Pickers">
 			</div>
 			<!-- Project infos -->
-			<div class="mt3 mt0-ns">
+			<div class="mt3 mt3-m mt0-ns">
 				<span class="black-50">2016</span>
 				<h3 class="f3 f2-ns mt3">Pickers</h3>
-				<div class="mt2 mt3-ns flex-ns">
-					<p class="lh-copy measure pr5-ns">
+				<div class="mt2 mt2-m mt3-ns db-m flex-ns">
+					<p class="lh-copy measure pr0-m pr5-ns">
 						Um app de pesquisas para indecisos. Você escolhe entre fotos, vídeos e GIFs para montar um mosaico, faz sua pergunta e a comunidade dos Pickers te ajuda a escolher. App híbrido para iOS e Android.
 					</p>
-					<ul class="pl0 pl4-ns list lh-copy black-50 mt4 mt0-ns">
+					<ul class="pl0 pl0-m pl4-ns list lh-copy black-50 mt4 mt4-m mt0-ns">
 						<li class="b black ttu tracked f6">O que fiz</li>
 						<li class="mt1">Interações</li>
 						<li class="mt1">Identidade visual</li>
@@ -127,19 +130,19 @@
 		</section>
 
 		<!-- Projetos: DiaTipo Campinas -->
-		<section class="mt6 flex-ns">
+		<section class="mt6 db-m flex-ns">
 			<div class="w-100 mw7 nl3 nr3 mh0-ns">
 				<img src="../img/diatipo.png" alt="DiaTipo Campinas">
 			</div>
 			<!-- Project infos -->
-			<div class="w-40-ns pl5-ns self-end mt3 mt0-ns">
+			<div class="w-100-m w-40-ns pl0-m pl5-ns self-end mt3 mt3-m mt0-ns">
 				<span class="black-50">2016</span>
 				<h3 class="f3 f2-ns mt3">DiaTipo</h3>
-				<div class="w-100 mt2 mt3-ns">
+				<div class="w-100 mt2 mt2-m mt3-ns">
 					<p class="lh-copy measure-narrow">
 						Site para a edição de 2016 do evento de tipografia DiaTipo Campinas.
 					</p>
-					<div class="flex justify-between db-ns">
+					<div class="flex flex-m justify-between db-ns">
 						<ul class="pl0 list lh-copy black-50 mt4">
 							<li class="b black ttu tracked f6">O que fiz</li>
 							<li class="mt1">Identidade visual</li>
@@ -153,16 +156,16 @@
 		</section>
 
 		<!-- Projetos: Playkids -->
-		<section class="mt6 flex-ns">
+		<section class="mt6 db-m flex-ns">
 			<!-- Project infos -->
 			<div class="w-100 mw7 order-1 nl3 nr3 mh0-ns">
 				<img src="../img/playkids.png" alt="PlayKids" class="db w-100">
 			</div>
-			<div class="w-40-ns order-0 mt3 mt0-ns">
+			<div class="w-100-m w-40-ns order-0 mt3 mt3-m mt0-ns">
 				<span class="black-50">2015</span>
 				<h3 class="f3 f2-ns mt3">PlayKids</h3>
-				<div class="mt2 mt3-ns">
-					<p class="lh-copy measure pr5-ns">
+				<div class="mt2 mt2-m mt3-ns">
+					<p class="lh-copy measure pr0-m pr5-ns">
 						Front-end para o site da PlayKids e adaptação da interface (feita pelo <a href="http://www.maksonserpa.com.br/" class="accent" target="_blank">Makson Serpa</a>) para as versões de tablets e smartphones.
 					</p>
 					<ul class="pl0 list lh-copy black-50 cl mt4">
@@ -175,9 +178,9 @@
 		</section>
 
 		<footer class="bt b--black-20 pt5 mt6">
-			<ul class="list pl0 flex-ns justify-between black-50 f6 lh-copy">
+			<ul class="list pl0 db-m flex-ns justify-between black-50 f6 lh-copy">
 				<li class="pv1">Site construído com <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> + <a href="https://fonts.google.com/specimen/Work+Sans" class="accent">Work Sans</a></li>
-				<li class="pv1 w-100-ns mw7-ns pl6-ns">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> André Matiazzo</li>
+				<li class="pv1 w-100-ns mw7-ns pl0-m pl6-ns">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> André Matiazzo</li>
 			</ul>
 		</footer>
 
