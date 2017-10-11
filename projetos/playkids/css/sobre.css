@@ -1,0 +1,81 @@
+.sobre .intro h1 {
+	padding: 10px 12px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	margin-top: 0;
+	background-color: #fec900;
+	width: auto;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.sobre .intro p {
+	font-size: 8rem;
+	max-width: 900px;
+	line-height: 1.1;
+	font-weight: 700;
+	color: #9961E8;
+	margin-top: 0;
+	margin-bottom: 130px;
+}
+
+.content {
+	background: #fff;
+	padding: 70px 0 150px 0;
+	text-align: center;
+}
+
+.content p {
+	text-align: left;
+	font-size: 1.8rem;
+	line-height: 1.75;
+	max-width: 620px;
+	font-weight: 300;
+	margin: 0 auto 25px auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.content p:last-of-type {
+	margin-bottom: 60px;
+}
+
+.content p span {
+	font-weight: 400;
+	font-size: 1.7rem;
+}
+
+.content a {
+	background-color: #9961E8;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 0.08rem;
+	padding: 15px 25px;
+	border-radius: 33px;
+}	
+
+.content a:hover,
+.content a:focus {
+	text-decoration: none;
+	background-color: #A977EF;
+}
+
+@media screen and (max-width: 767px) {
+	.content {
+		padding-bottom: 120px;
+	}
+
+	.content p {
+		font-weight: 400;
+	}
+}
+
+@media screen and (max-width: 659px) {
+	.sobre .intro p {
+		font-size: 5rem;
+		margin-bottom: 80px;
+	}
+}

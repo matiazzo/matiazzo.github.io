@@ -23,9 +23,9 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
 	<link rel="manifest" href="fav/manifest.json">
-	<meta name="msapplication-TileColor" content="#FDA88A">
+	<meta name="msapplication-TileColor" content="#FFFCFB">
 	<meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
-	<meta name="theme-color" content="#FDA88A">
+	<meta name="theme-color" content="#FFFCFB">
 
 	<!-- Tags específicas para o Facebook -->
 	<meta property="og:locale" content="pt_BR">
@@ -43,6 +43,10 @@
 	<meta name="twitter:title" content="andré matiazzo – designer de interfaces" />
 	<meta name="twitter:site" content="@matiazzo" />
 	<meta name="twitter:image" content="http://andrematiazzo.com/img/share.jpg" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
 
 	<!-- Google Analytics -->
 	<script>
@@ -69,7 +73,7 @@
 </head>
 <body class="dark-gray">
 	<!-- Wrapper -->
-	<main class="center pv5 ph4 ph4-m pa5-ns mw9">
+	<main class="center pt5 pb4 pv5-ns ph4 ph4-m pa5-ns mw9">
 		<!-- Presentation & Nav-->
 		<div class="flex-column-m flex-ns">
 			<!-- Presentation -->
@@ -79,7 +83,7 @@
 					Designer de interfaces na <a class="accent dim" href="https://www.movile.com">Movile</a>.
 				</p>
 				<p class="f5 lh-copy measure-narrow-ns">
-					Me interessam o design como sistema, o potencial da web e a escrita como ferramenta de design.
+					Me interessam o design como sistema, o potencial da web e a escrita como ferramenta de projeto.
 				</p>
 				<div class="mt4 mt4-m mt5-ns w-50">
 					<a href="mailto:oi@andrematiazzo.com" class="link dim black-50">oi@andrematiazzo.com</a>
@@ -87,9 +91,9 @@
 			</div>
 			<!-- Nav -->
 			<nav class="mt6 mt5-m mt0-ns w-100-m w-50-ns self-end-ns">
-				<ul class="list pl0 flex-ns">
-					<li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pb1 bb">Projetos</a></li>
-					<li class="mr4 mt2 mt0-ns "><a href="/escrita" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pb1">Escrita</a></li>
+				<ul class="list pl0 flex flex-wrap items-start">
+					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1 bb">Projetos</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="/escrita" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1">Escrita</a></li>
 					<!-- <li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6">Leituras</a></li> -->
 				</ul>
 			</nav>
@@ -104,7 +108,7 @@
 		<!-- Projetos: Pickers -->
 		<section class="mt4">
 			<div class="nl3 nr3 mh0-ns">
-				<img src="../img/pickers.png" alt="App Pickers">
+				<img src="../img/pickers.png" alt="Imagem mostra telas do aplicativo Pickers">
 			</div>
 			<!-- Project infos -->
 			<div class="mt3 mt3-m mt0-ns">
@@ -127,7 +131,7 @@
 		<!-- Projetos: DiaTipo Campinas -->
 		<section class="mt6 db-m flex-ns">
 			<div class="w-100 mw7 nl3 nr3 mh0-ns">
-				<img src="../img/diatipo.png" alt="DiaTipo Campinas">
+				<img src="../img/diatipo.png" alt="Imagem mostra versões do site para o DiaTipo Campinas">
 			</div>
 			<!-- Project infos -->
 			<div class="w-100-m w-40-ns pl0-m pl5-ns self-end mt3 mt3-m mt0-ns">
@@ -137,14 +141,14 @@
 					<p class="lh-copy measure-narrow">
 						Site para a edição de 2016 do evento de tipografia DiaTipo Campinas.
 					</p>
-					<div class="flex flex-m justify-between db-ns">
+					<div class="flex flex-m justify-between justify-start-m db-ns">
 						<ul class="pl0 list lh-copy black-50 mt4">
 							<li class="b black ttu tracked f6">O que fiz</li>
 							<li class="mt1">Identidade visual</li>
 							<li class="mt1">Interface</li>
 							<li class="mt1">Front-end</li>
 						</ul>
-						<a href="http://www.diatipo.com.br/campinas/" target="_blank" class="mt4 dim dib-ns accent cb">Veja online &#10169;</a>
+						<a href="http://www.diatipo.com.br/campinas/" target="_blank" class="pl5-m mt4 dim dib-ns accent cb">Veja online &#10169;</a>
 					</div>
 				</div>
 			</div>
@@ -154,7 +158,7 @@
 		<section class="mt6 db-m flex-ns">
 			<!-- Project infos -->
 			<div class="w-100 mw7 order-1 nl3 nr3 mh0-ns">
-				<img src="../img/playkids.png" alt="PlayKids" class="db w-100">
+				<img src="../img/playkids.png" alt="Imagem mostra versões do site para o site do PlayKids" class="db w-100">
 			</div>
 			<div class="w-100-m w-40-ns order-0 mt3 mt3-m mt0-ns">
 				<span class="black-50">2015</span>
@@ -172,9 +176,9 @@
 			</div>
 		</section>
 
-		<footer class="bt b--black-20 pt5 mt6">
+		<footer class="bt b--black-20 pt4 pt5-ns mt6">
 			<ul class="list pl0 db-m flex-ns justify-between black-50 f6 lh-copy">
-				<li class="pv1 w-100-m w-50-ns mw6">Site construído com <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> + <a href="https://fonts.google.com/specimen/Work+Sans" class="accent">Work Sans</a></li>
+				<li class="pv1 w-100-m w-50-ns mw6"><span class="b f6">&#10000;</span> <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> + <a href="https://fonts.google.com/specimen/Work+Sans" class="accent">Work Sans</a></li>
 				<li class="pv1 mw7-ns">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> André Matiazzo</li>
 			</ul>
 		</footer>
@@ -191,5 +195,3 @@
 	</div>
 </body>
 </html>
-<link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">

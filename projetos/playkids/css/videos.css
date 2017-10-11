@@ -1,0 +1,139 @@
+/*body {
+	background-color: #FBF5EE;
+	}*/
+
+	.main-menu {
+		margin-bottom: 80px;
+	}
+
+	.main-menu .navbar-nav>li>.dropdown-menu {
+		border: 1px solid #ccc;
+		margin-top: 0;
+		background: #DDE4E8;
+	}
+
+	.main-menu .navbar-nav>li>a.dropdown-toggle {
+		background: #DDE4E8;
+	}
+
+	.main-menu .navbar-nav>li>a.dropdown-toggle:hover,
+	.main-menu .navbar-nav>li>a.dropdown-toggle:focus {
+		background: #DDE4E8;
+	}
+
+	.videos .intro {
+		margin-bottom: 100px;
+	}
+
+	.videos .intro h1,
+	.videos .episodes h1 {
+		padding: 11px 12px 10px 12px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		margin-top: 0;
+		background-color: #fec900;
+		width: auto;
+		text-transform: uppercase;
+		display: inline-block;
+	}
+
+	.videos .intro p {
+		font-size: 10rem;
+		line-height: 1.2;
+		font-weight: 700;
+		color: #9961E8;
+		margin-top: 0;
+	}
+
+	.video-container {
+		position: relative;
+		padding-bottom: 53.6%;
+		padding-top: 30px; 
+		height: 0; 
+	}
+
+	.video-container iframe,
+	.video-container object,
+	.video-container embed {
+		position: absolute;
+		top: 88px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.content__card {
+		position: relative;
+		margin-bottom: 90px;
+	}
+
+	.content__infos {
+		position: absolute;
+		bottom: 0;
+		left: 15px;
+	}
+
+	.content__infos > h3 {
+		position: absolute;
+		top: -65px;
+		padding: 25px 30px;
+		background-color: #9961E8;
+		color: #fff;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-weight: 100;
+		font-size: 3.5rem;
+		z-index: 3;
+	}
+
+	.content__description {
+		max-width: 400px;
+		background-color: #FAFAFA;
+		font-size: 1.6rem;
+		line-height: 1.7;
+		font-weight: 500;
+		padding: 25px 30px;
+		padding-top: 45px;
+		margin-bottom: 0;
+		letter-spacing: 0.02rem;
+	}
+
+	@media screen and (max-width: 509px) {
+
+		.videos .intro p {
+			font-size: 5rem;
+		}
+
+		.content__card {
+			margin-bottom: 60px;
+		}
+
+		.content__description {
+			position: relative;
+			bottom: 0;
+			right: 0;
+			max-width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 599px) {
+		.videos .intro {
+			margin-bottom: 80px;
+		}
+
+		.videos .intro h2 {
+			font-size: 5rem;
+		}
+
+		.content__infos {
+			position: relative;
+			bottom: 0;
+			left: 0;
+		}
+
+		.content__infos > h3 {
+			top: -55px;
+			font-size: 3rem;
+		}
+	}
