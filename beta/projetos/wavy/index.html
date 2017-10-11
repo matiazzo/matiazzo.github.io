@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Wavy – André Matiazzo</title>
+	<meta http-equiv="Cache-control" content="public">
+	<meta name="author" content="André Matiazzo">
+	<meta name="description" content="Wavy, um projeto de André Matiazzo">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../../fav/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../fav/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../fav/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../fav/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../fav/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../../fav/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../fav/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../../fav/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../fav/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../../fav/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../../fav/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../fav/favicon-16x16.png">
+	<link rel="manifest" href="../../fav/manifest.json">
+	<meta name="msapplication-TileColor" content="#FFFCFB">
+	<meta name="msapplication-TileImage" content="../../fav/ms-icon-144x144.png">
+	<meta name="theme-color" content="#FFFCFB">
+
+	<!-- Tags específicas para o Facebook -->
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:url" content="http://andrematiazzo.com">
+	<meta property="og:title" content="Wavy, um projeto de André Matiazzo">
+	<meta property="og:site_name" content="Wavy, um projeto de André Matiazzo">
+	<meta property="og:description" content="Ajudei a refazer do zero a interface do Wavy, um produto para empresas que usam o SMS para comunicação. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz.">
+	<meta property="og:image" content="http://andrematiazzo.com/img/share.jpg">
+	<meta property="og:type" content="website">
+	<meta name="category" content="André Matiazzo, Matiazzo, Design, Campinas, Designer, Interface">
+	
+	<!-- Tags específicas para o Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="Ajudei a refazer do zero a interface do Wavy, um produto para empresas que usam o SMS para comunicação. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz." />
+	<meta name="twitter:title" content="Wavy, um projeto de André Matiazzo" />
+	<meta name="twitter:site" content="@matiazzo" />
+	<meta name="twitter:image" content="http://andrematiazzo.com/img/share.jpg" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-52158704-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<style>
+	* {margin: 0;}
+	body {
+		background: #FFFCFB;
+		background-image: url(../../img/bg.png);
+		background-attachment: fixed;
+		font-family: 'Work Sans', sans-serif;
+	}
+	.accent {color: #ff9778;}
+	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
+	/* FLEX GROW */
+	.fg-1 { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
+	.fg-2 { -webkit-box-flex: 2; -ms-flex-positive: 2; flex-grow: 2; }
+	.fg-3 { -webkit-box-flex: 3; -ms-flex-positive: 3; flex-grow: 3; }
+	.fg-4 { -webkit-box-flex: 4; -ms-flex-positive: 4; flex-grow: 4; }
+	.fg-i { -webkit-box-flex: inherit; -ms-flex-positive: inherit; flex-grow: inherit; }
+</style>
+</head>
+<body class="dark-gray">
+	<!-- Wrapper -->
+	<main class="center pt5 pb4 pv5-ns ph4 ph4-m pa5-ns mw9">
+		<!-- Presentation & Nav-->
+		<div class="flex-column-m flex-ns">
+			<!-- Presentation -->
+			<div class="w-100 w-80-m w-50-ns mw6 dn db-ns">
+				<h1 class="f5 mv0 tracked-mega ttu"><a href="../../" class="link black">André Matiazzo</a></h1>
+				<p class="mt4 mt4-m mt5-ns f5 lh-copy measure-narrow-ns">
+					Designer de interfaces na <a class="accent dim" href="https://www.movile.com">Movile</a>.
+				</p>
+				<p class="f5 lh-copy measure-narrow-ns">
+					Me interessam o design como sistema, o potencial da web e a escrita como ferramenta de projeto.
+				</p>
+				<div class="mt4 mt4-m mt5-ns w-50">
+					<a href="mailto:oi@andrematiazzo.com" class="link dim black-50">oi@andrematiazzo.com</a>
+				</div>
+			</div>
+			<!-- Nav -->
+			<nav class="mt6-ns mt5-m mt0-ns w-100-m w-50-ns self-end-ns">
+				<ul class="list pl0 flex flex-wrap items-start">
+					<li class="mr4 mt2 mt0-ns"><a href="../../" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1 bb"><span class="dib rotate-180 accent">&#10168;</span>&nbsp;&nbsp;Projetos</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="/escrita" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1">Escrita</a></li>
+					<!-- <li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6">Leituras</a></li> -->
+				</ul>
+			</nav>
+		</div>
+
+		<!-- Título da Página & Item 01-->
+		<div class="flex-ns">
+			<div class="w-50-ns mw6 dn db-ns"></div>
+			<div class="w-100-m w-50-ns mt4 mt5-ns">
+				<h2 class="f1 f1-m f-headline-ns">Wavy</h2>
+			</div>
+		</div>
+		<div class="flex-ns">
+			<ul class="dn db-ns pl0 list lh-copy black-50 mt6-ns pt5-ns w-50-ns mw6 tr-ns">
+				<li class="b black ttu tracked f6">O que fiz</li>
+				<li class="mt1">Arquitetura da informação</li>
+				<li class="mt1">Design de interação</li>
+				<li class="mt1">Identidade visual</li>
+				<li class="mt1">HTML + CSS</li>
+				<li class="mt1">Escrita</li>
+			</ul>
+			<div class="dn-ns mw6 w-50-ns"></div>
+			<p class="lh-copy measure-l mt2 w-100-m w-50-ns">
+				Ajudei a refazer do zero a interface do Wavy, um produto para empresas que usam o SMS para comunicação. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz.
+			</p>
+		</div>
+
+		<!-- Identidade Visual -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<h4 class="f2 w-100-m w-50-ns"><span class="black-20 db f3 mb2">01</span>Identidade visual</h4>
+			</div>
+			<!-- Type heavy -->
+			<figure class="ma0 nl3 nr3 mh0-ns mt4">
+				<img src="img/envio.png" alt="Imagem mostra parte da tela para envio de SMS, com uma caixa para digitar texto e uma prévia da mensagem logo ao lado" class="shadow-0">
+			</figure>
+			<div class="flex-ns mt4">
+				<div class="w-50-ns mw6 dn dn-m db-ns"></div>
+				<div class="w-50-ns">
+					<h5 class="f4 b">Type heavy</h5>
+					<p class="lh-copy mt2 measure">
+						Começar o projeto com a restrição (criada por mim mesmo) de que a interface deveria se apoiar em tipografia reforçou a atenção aos detalhes: a dose errada poderia transformar os elementos numa mancha de texto.
+					</p>
+				</div>
+			</div>
+			<!-- À esquerda -->
+			<div class="flex-ns items-end mt5 mt4-ns">
+				<figure class="nl3 nr3 ma0 mt5-ns mh0-ns mw8 order-2-ns">
+					<img src="img/envio-02.png" alt="Imagem mostra a seção de resumo de um envio de SMS, com todos os elementos visuais alinhados à esquerda" class="shadow-0">
+				</figure>
+				<div class="mt4 mt0-ns pr4-ns order-1-ns">
+					<h5 class="f4 b">À esquerda</h5>
+					<p class="lh-copy mt2 measure">
+						Decidi também que todos os objetos da interface flutuariam para a esquerda. Naturalmente, o layout ficaria mais elegante. Um dos problemas dessa decisão é quando a tela do usuário é muito larga e você <span class="i">precisa</span> de um objeto mais à direita. É quase inevitável que ele fique à deriva.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Story vs. System -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<div class="w-50-ns mw6">
+					<h4 class="f2"><span class="black-20 db f3 mb2">02</span>Histórias e Sistemas</h4>
+					<p class="lh-copy mt3 measure">
+						Aprendi com <a href="https://design.quora.com/Stories-and-Systems" class="accent" target="_blank">Mills Baker</a> que bons designers precisam alternar <span class="i">story thoughts</span> e <span class="i">system thoughts</span> o tempo todo enquanto projetam interfaces digitais – levar em conta o que os usuários esperam do sistema e o que faz sentido dentro do próprio sistema.
+					</p>
+					<p class="lh-copy measure mt4">
+						Como sistema, o Wavy já era muito bem pensado pelos desenvolvedores back-end. Sua interface, nem tanto. Ela era mais próxima à lógica do sistema do que à das pessoas que usavam a interface, o que fazia com que muitas funções e áreas do produto fossem descobertas por tentativa e erro.
+					</p>
+				</div>
+			</div>
+			<div class="flex-ns mt4 mt5-ns items-end">
+				<figure class="ma0 pr4-ns">
+					<div class="nl3 nr3 mh0-ns">
+						<img src="img/relatorios-antigos.png" alt="Imagem mostra uma lista de relatórios do sistem antigo e seus nomes: 'Relatório de envios', 'Relatório de mensagens enviadas', 'Relatório consolidade de mensagens enviadas'" class="shadow-0 self-center db mw-100">
+					</div>
+					<figcaption class="measure-narrow-ns lh-copy f6 i black-50 mt2">
+						As opções de relatórios (16, ao todo) na interface anterior tinham nomes perigosamente parecidos
+					</figcaption>
+				</figure>
+				<figure class="ma0 mt4 mt0-ns mw9">
+					<div class="nl3 nr3 mh0-ns">
+						<img src="img/relatorios-novos.png" alt="Imagem mostra nova hierarquia dos relatórios na nova versão" class="shadow-0 self-center db mw-100">
+					</div>
+					<figcaption class="measure-ns lh-copy f6 i black-50 mt2">
+						Na nova hierarquia, os mesmos relatórios são acessíveis a partir de um único lugar, evitando os casos de "será que é esse que eu quero? puts, não" da interface anterior
+					</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<!-- Escrita -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<div class="w-50-ns mw6-ns">
+					<h4 class="f2"><span class="black-20 db f3 mb2">03</span>Escrita</h4>
+					<p class="lh-copy measure mt3">
+						Lidar com uma plataforma de três anos de idade é lidar com nomes conhecidos por quem a construiu, por quem fala dela e por quem a usa. Me atentei à forma como as pessoas nomeavam as entidades do Wavy para manter a consistência por todo o produto, introduzir novos termos e também <a href="#nomenclatura" class="accent">questionar</a> decisões tomadas no passado.
+					</p>
+				</div>
+			</div>
+			<!-- Imagens ilustrando escrita -->
+			<div class="flex-ns mt4">
+				<div class="w-50-ns mw6 pr4-ns mt5-ns nl3 nr3 mh0-ns">
+					<img src="img/escrita-01.png" alt="Imagem mostra o seguinte comentário de André Matiazzo na aprovação de um código:'Esse texto está no dropdown de escolha de gênero. Como estamos permitindo o cadastro de masculino, feminino ou outro, escolheria o termo Qualquer um ao invés do termo Um ou outro'" class="shadow-0 self-center db mw-100">
+					<img src="img/escrita-04.png" alt="Imagem mostra o seguinte comentário de André Matiazzo na aprovação de um código:'Dá para mudar a frase em inglês também. Não sei se teremos alguma configuração de escolha de ver ou não ver os contatos da blacklist. Mas, caso eles sempre estejam visíveis, eu tiraria essa frase you will still be able to see e a deixaria como you will still see'" class="shadow-0 self-center db mw-100 mt4">
+				</div>
+				<div class="w-50-ns mw6 pr4-ns nl3 nr3 mh0-ns">
+					<img src="img/escrita-03.png" alt="Imagem mostra o seguinte comentário de André Matiazzo na aprovação de um código:'Vamos escrever Operadoras como substantivos próprios? Eu defendo que não, porque estamos tratandos os elementos do nosso produto como entidades já (Mensagens, Relatórios, Dashboard etc). E operadora não entra nesse mesmo grupo.'" class="shadow-0 self-center db mw-100 mt4 mt0-ns">
+					<img src="img/escrita-02.png" alt="Imagem mostra o seguinte comentário de André Matiazzo na aprovação de um código:'Acho que o termo Você precisa é melhor do que o termo Você deve. Passa mais ideia de que é uma necessidade nossa, e não uma obrigação do usuário.'" class="shadow-0 self-center db mw-100 mt4">
+				</div>
+			</div>
+		</section>
+
+		<!-- Front-end -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<div class="w-50-ns mw6-ns">
+					<h4 class="f2"><span class="black-20 db f3 mb2">04</span>Front-end</h4>
+					<p class="lh-copy measure mt3">
+						Lá pelo terceiro mês do projeto, comecei a usar mais o <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> em alguns projetos pessoais e sugeri que adotássemos ele para o Wavy. Já estávamos trabalhando com a modularização dos elementos da interface, mas eu sentia que, usando tachyons, seríamos forçados ainda mais a reduzir nossas variações e a manter o visual consistente por todo o projeto.
+					</p>
+					<p class="lh-copy measure mt4">
+						Em duas semanas, eu e <a href="http://hudsonsouza.com/" class="accent" target="_blank">Hudson</a> conseguimos traduzir tudo o que já havíamos feito de front-end nesses três meses para a nova <span class="i">library</span>.
+					</p>
+					<p class="lh-copy measure mt4">
+						O CSS escrito em tachyons convive com estilos nossos, próprios para elementos visuais mais complexos e que aparecem com certa frequência ao longo do Wavy. O caminho para modularização ainda não é o que mais nos agrada, porque a desvantagem em usar essa <span class="i">library</span> é o custo da manutenção de todos os objetos.
+					</p>
+				</div>
+			</div>
+			<div class="flex-ns mt4">
+				<div class="w-40-ns mw6 pr4-ns nl3 nr3 mh0-ns">
+					<img src="img/input-01.png" alt="Imagem mostra um seletor de status de envio" class="shadow-0 self-center db w-100">
+					<img src="img/input-03.png" alt="Imagem mostra um seletor com um campo interno para busca e os resultados dela" class="shadow-0 self-center db w-100 mt4">
+					<p class="lh-copy mt4 i f6 black-50 measure ph3 ph0-ns">
+						Esses dropdowns ainda são um exercício de modularização que precisamos refinar mais. É um mesmo elemento do sistema, mas com variações que só tendem a crescer.
+					</p>
+				</div>
+				<div class="w-40-ns mw6 pr4-ns mt4 mt0-ns nl3 nr3 mh0-ns">
+					<img src="img/input-04.png" alt="Imagem mostra um seletor com um campo interno para busca, mas que apresenta dois tipos de resultados diferentes" class="shadow-0 self-center db w-100">
+					<img src="img/input-02.png" alt="Imagem mostra um seletor de status de envio" class="shadow-0 self-center db w-100 mt4">
+				</div>
+				<div class="flex items-start db-ns w-20-ns mw6 mt4 mt0-ns nl3 nr3 mh0-ns">
+					<div class="pr3 pr0-ns w-50 w-100-ns">
+						<img src="img/input-05.png" alt="Imagem mostra um seletor de período, com a opção Dia selecionada" class="shadow-0 self-center-ns db w-100">
+					</div>
+					<div class="pl3 pl0-ns w-50 w-100-ns">
+						<img src="img/input-06.png" alt="Imagem mostra todas as opções de um seletor de período: Dia e mês" class="shadow-0 self-center-ns db w-100 mt4-ns">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Equipe -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<h4 class="f2"><span class="w-50-ns mw6-ns black-20 db f3 mb2">05</span>Equipe</h4>
+			</div>
+			<div class="flex-ns">
+				<div class="flex-ns flex-wrap">
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Ursula Reichenbach</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/ursulareichenbach/" class="accent" target="_blank">Designer</a>. Liderou o design no início do projeto e fez as primeiras estruturas da nova interface.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Bruno Farias</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/bruno-farias-de-souza-21121a19/" class="accent" target="_blank">Produto</a>. Responsável pela ideia de melhorar o produto e de incrementá-lo com novas funções.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">André Bonfatti</h5>
+						<p class="lh-copy mt2"><a href="http://andrebnf.github.io/" class="accent" target="_blank">Back/front-end</a>. Parceiro no front-end e responsável por ser o mediador entre o front-end e o back-end do projeto.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Bruno Azenha</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/bruno-azenha/" class="accent" target="_blank">Back-end</a>. Responsável pela implementação do canal de voz no Wavy e o melhor <span class="i">system thinker</span> do projeto.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Daniel Panhan</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/daniel-panhan-b4176abb/" class="accent" target="_blank">Back-end</a>. Conhece o back-end do produto de cabo a rabo e é nosso farol para qualquer dúvida de desenvolvimento.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Hudson Souza</h5>
+						<p class="lh-copy mt2"><a href="http://hudsonsouza.com/" class="accent" target="_blank">Designer/Front-end</a>. Me ajudou com o front-end e o visual do Wavy no início do projeto.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Rafael Dias</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/rafaellooslidias/" class="accent" target="_blank">Back-end</a>. Responsável pela entrada do email como canal no projeto e o melhor nomeador de APIs.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Diogo Matheus</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/diogomatheus/" class="accent" target="_blank">Designer</a>. Expandiu a atuação do design com o time de vendas.</p>
+					</div>
+					<div class="w-50-m w-25-ns mw-100-m mw5-ns pr4-ns mt4">
+						<h5 class="f4 lh-title">Felipe Bernal</h5>
+						<p class="lh-copy mt2"><a href="https://www.linkedin.com/in/ursulareichenbach/" class="accent" target="_blank">Produto</a>. Trouxe a experiência de produto com o <a href="https://www.chatclub.me/" class="accent" target="_blank">ChatClub</a> para nos ajudar a melhorar o Wavy.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Anexos -->
+		<section class="mt6">
+			<div class="flex-ns">
+				<div class="w-50-ns mw6 dn db-ns"></div>
+				<div class="w-50-ns mw6-ns">
+					<h4 class="f2"><span class="black-20 db f3 mb2">06</span>Anexos</h4>
+					<p class="lh-copy measure mt3">
+						Outras telas, elementos visuais e etapas do processo:
+					</p>
+				</div>
+			</div>
+			<figure class="ma0 mt4 nl3 nr3 mh0-ns">
+				<img src="img/login.png" alt="Imagem mostra tela de login do Wavy" class="shadow-0">
+			</figure>
+			<div class="nl3 nr3">
+				<div class="flex-ns nl3 nr3 mh0-ns">
+					<figure class="ma0 mt3 mt4-ns w-50-ns ph3">
+						<img src="img/grafico.png" alt="Imagem mostra um gráfico em barras" class="shadow-0">
+					</figure>
+					<figure class="ma0 mt3 mt4-ns w-50-ns ph3">
+						<img src="img/inputs.png" alt="Imagem mostra vários seletores diferentes entre si" class="shadow-0">
+						<p class="lh-copy mt2 i f6 black-50 measure ph3 ph0-ns">
+							Estudo em que os elementos até ficaram bonitinhos, mas visualmente muito parecidos. As pessoas mal sabiam diferenciá-los.
+						</p>
+					</figure>
+				</div>
+			</div>
+			<figure class="ma0 mt4 nl3 nr3 mh0-ns">
+				<img src="img/dashboard.png" alt="Imagem mostra a tela de Dashboard do Wavy" class="shadow-0">
+			</figure>
+			<div class="nl3 nr3">
+				<div class="flex-ns nl3 nr3 mh0-ns">
+					<figure class="ma0 mt3 mt4-ns mw7 ph3">
+						<img src="img/contatos.png" alt="Imagem mostra a tela interna de Contatos do Wavy" class="shadow-0">
+					</figure>
+					<div class="mw6 ma0 mt4 ph3 dn db-ns">
+						<video width="100%" class="shadow-0" autoplay loop><source src="img/blacklist.mp4" type="video/mp4">
+						</video>
+						<p class="lh-copy mt2 i f6 black-50 measure">
+							O conhecimento em front-end cria espaços para testar interações no ambiente em que elas serão usadas.
+						</p>
+					</div>
+				</div>
+			</div>
+			<figure class="ma0 mt3 mt4-ns nl3 nr3 mh0-ns">
+				<img src="img/mensagens.png" alt="Imagem mostra a tela com histórico de mensagens do Wavy" class="shadow-0">
+			</figure>
+			<div class="nl3 nr3" id="nomenclatura">
+				<div class="flex-ns items-end-ns">
+					<figure class="ma0 mt3 mt4-ns mw7 ph3-m ph3-ns order-1-m order-1-ns">
+						<img src="img/campanhas-01.png" alt="Imagem mostra um fluxo, em texto, de campanhas e mensagens" class="shadow-0">
+					</figure>
+					<p class="lh-copy mt2 mt4-ns i f6 black-50 mw6 ph3 order-0-m order-0-ns">
+					Já que todas as mensagens eram, obrigatoriamente, atreladas a uma campanha, muitas pessoas as criavam apenas para satisfazer o sistema. Isso fez com que muitas campanhas tivessem uma única mensagem associada a elas. No futuro, esse hábito poderia fazer com que as comparações entre campanhas diferentes não mostrasse nada de significativo.
+					</p>
+				</div>
+			</div>
+			<div class="nl3 nr3">
+				<div class="flex-ns items-end-ns">
+					<figure class="ma0 mt4 mw7 ph3-m ph3-ns">
+						<img src="img/campanhas-02.png" alt="Imagem mostra a proposta de novo fluxo, em texto, em que campanhas e mensagens são um único elemento" class="shadow-0">
+					</figure>
+					<p class="lh-copy mt2 mt4-ns i f6 black-50 mw6 ph3">
+					Mas, se transformássemos todas as mensagens em campanhas, menos ruído seria criado. Enxugaríamos a quantidade de informações com as quais os usuários precisariam lidar sem perder a capacidade de comparar mensagens entre si.
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+		<footer class="bt b--black-20 pt4 pt5-ns mt6">
+			<ul class="list pl0 db-m flex-ns justify-between black-50 f6 lh-copy">
+				<li class="pv1 w-100-m w-50-ns mw6"><span class="b f6">&#10000;</span> <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> + <a href="https://fonts.google.com/specimen/Work+Sans" class="accent">Work Sans</a></li>
+				<li class="pv1 mw7-ns">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> André Matiazzo</li>
+			</ul>
+		</footer>
+
+
+	</main>
+
+	<!-- Rerence grid -->
+	<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
+		<div class="fl w-25 bl br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+		<div class="fl w-25 br b--black-10 h-100"></div>
+	</div>
+</body>
+</html>
