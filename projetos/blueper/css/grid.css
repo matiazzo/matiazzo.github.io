@@ -1,0 +1,87 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0px;
+	position: relative;
+}
+
+.container:after, .container:before {
+	content: " ";
+	display: table;
+}
+
+.container:after {
+	clear: both;
+}
+
+.grid-5, .grid-7 {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+.grid-5 	{width: 280px;}
+.grid-7 	{width: 400px;}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+
+.container {
+	width: 768px;	
+}
+ 
+
+.grid-5		{width: 220px;}
+.grid-7		{width: 316px;}
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+.container {
+	width: 768px;	
+}
+
+.grid-5, .grid-7 {
+	width: 300px;
+	margin: 0 0 20px 0;
+	float: none;
+}
+
+
+
+.grid-5		{width: 220px;}
+.grid-7		{width: 316px;}
+
+
+}
+
+
+@media only screen and (max-width: 767px) {
+.container {
+	width: 300px;
+}
+
+.grid-5, .grid-7 {
+	width: 300px;
+	margin: 0 0 20px 0;
+	float: none;
+}
+
+
+ }
+
+
+
+
