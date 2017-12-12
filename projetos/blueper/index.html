@@ -13,6 +13,7 @@
   * {margin: 0;}
   body {
     font-family: 'Barlow', sans-serif;
+    background-attachment: fixed;
   }
   .accent {color: #00aeef;}
   .bg-accent {background-color: #00aeef;}
@@ -23,6 +24,7 @@
     background: -webkit-linear-gradient(-45deg,  #00aeef 50%,#00a2ed 50%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg,  #00aeef 50%,#00a2ed 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeef', endColorstr='#00a2ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-attachment: fixed;
 
   }
 </style>
@@ -30,31 +32,35 @@
 </head>
 <body class="bg-gradient cf">
   <!-- Main info -->
-  <div class="fl w-50 vh-100 pa5 relative">
+  <div class="fl-ns w-50-ns vh-100 ph4 pa5-ns relative">
     <div class="dt h-100">
       <div class="dtc v-mid">
-        <img src="img/logo-w.png" class="w5 db" alt="Logo Blueper">
-        <h1 class="white normal measure mt4 mb0 lh-title">Seus momentos compartilhados por outros pontos de vista</h1>
+        <img src="img/logo-w.png" class="w-80 w5-ns db" alt="Logo Blueper">
+        <h1 class="f3 f2-ns white normal measure mt4 mb0 lh-title">Seus momentos compartilhados por outros pontos de vista</h1>
       </div>
     </div>
-    <div class="h3 pt3 flex items-end absolute bottom-2 mb3 left-3">
-      <a href="https://play.google.com/store/apps/details?id=br.com.blueper&hl=pt-br" class="dib h-100"  target="_blank">
-        <img src="img/g-play.png" alt="Botão Google Play" class="h-100">
-      </a>
-      <a href="https://www.facebook.com/blueper" target="_blank" class="ml4 w2 ph1">
-        <img src="img/facebook.png" alt="db w-100">
-      </a>
-      <a href="https://www.instagram.com/bluepersocial/" target="_blank" class="ml4 w2 ph1">
-        <img src="img/instagram.png" alt="db w-100">
-      </a>
+    <div class="w-100 w-auto-ns h3-ns pt3 flex-ns items-end absolute bottom-2 mb3 ph4 left-0 right-0">
+      <div class="h3 h-100-ns pt3 pt0-ns">
+        <a href="https://play.google.com/store/apps/details?id=br.com.blueper&hl=pt-br" class="h-100-ns"  target="_blank">
+          <img src="img/g-play.png" alt="Botão Google Play" class="h-100">
+        </a>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/blueper" target="_blank" class="mt4 mt0-ns mr4 mr0-ns ml4-ns dib w2 ph1">
+          <img src="img/facebook.png" alt="db w-100">
+        </a>
+        <a href="https://www.instagram.com/bluepersocial/" target="_blank" class="mt4 mt0-ns mr4 mr0-ns ml4-ns dib w2 ph1">
+          <img src="img/instagram.png" alt="db w-100">
+        </a>
+      </div>
     </div>
   </div>
   <!-- Screens -->
-  <div class="fl w-50 vh-100 pa5 relative overflow-hidden">
-    <div class="w5 absolute bottom--2 nb5 z-1">
+  <div class="fl-ns w-50-ns vh-100 pa5-ns relative overflow-hidden">
+    <div class="dn db-ns w5 absolute bottom--2 nb5 z-1">
       <img src="img/inside-bluep.png" alt="Tela do app mostrando um bluep">
     </div>
-    <div class="w5 absolute bottom--1 right-2 mr5 nb4 z-0">
+    <div class="w5 absolute left-0 right-0 bottom--1-ns right-2-ns center mr5-ns nb4-ns z-0">
       <img src="img/home.png" alt="Tela do app mostrando a lista de blueps">
     </div>
   </div>
