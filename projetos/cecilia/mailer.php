@@ -28,7 +28,7 @@ $mail->SMTPAuth = true; // enable SMTP authentication
 $mail->SMTPSecure = 'tls';
 $mail->Port = 465; //SMTP porta (as mais utilizadas são '25' e '587'
 $mail->Host = "cp-22.webhostbox.net"; // SMTP servidor
-$mail->Username = "oi@andrematiazzo.com";  // SMTP  usuário
+$mail->Username = "andre@mtzz.co";  // SMTP  usuário
 $mail->Password = "Paolo090187$";  // SMTP senha
  
 $mail->IsSendmail(); 
@@ -37,7 +37,7 @@ $mail->AddReplyTo($email, $nome); //Responder para..
 $mail->From = $email; //e-mail fornecido pelo cliente
 $mail->FromName   = $nome; //nome fornecido pelo cliente
  
-$to = "oi@andrematiazzo.com"; //Enviar para
+$to = "andre@mtzz.co"; //Enviar para
 $mail->AddAddress($to);
 $mail->Subject  = "Marcas Design Estratágico"; //Assunto
 $mail->WordWrap   = 80; // set word wrap
