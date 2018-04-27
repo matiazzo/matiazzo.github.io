@@ -46,7 +46,8 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Martel:400,600" rel="stylesheet">
 
 	<!-- Google Analytics -->
 	<script>
@@ -69,71 +70,52 @@
 		font-family: 'Work Sans', sans-serif;
 	}
 	.accent {color: #ff9778;}
+	.accent-hover:hover {color: #ff9778;}
+	.b--accent {border-color: #ff9778;}
+	.f5 {font-size: 1.15rem;}
 	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
+	.plex {font-family: 'IBM Plex Serif';}
+	.martel {font-family: Martel; font-weight: 400;}
 </style>
 </head>
-<body class="dark-gray">
+<body class="mid-gray">
 	<!-- Wrapper -->
 	<main class="center pt5 pb4 pv5-ns ph4 ph4-m pa5-ns mw9">
-		<!-- Presentation & Nav-->
-		<div class="flex-column-m flex-ns">
-			<!-- Presentation -->
-			<div class="w-100 w-80-m w-50-ns mw6">
-				<h1 class="f5 mv0 tracked-mega ttu">André Matiazzo</h1>
-				<p class="mt4 mt4-m mt5-ns f5 lh-copy measure-narrow-ns">
-					Designer de produtos na <a class="accent dim" href="https://www.sympla.com.br">Sympla</a>.
-				</p>
-				<p class="f5 lh-copy measure-narrow-ns">
-					Me interessam o design como sistema, o potencial da web e a escrita como ferramenta de projeto.
-				</p>
-				<div class="mt4 mt4-m mt5-ns w-50">
-					<a href="mailto:andre@mtzz.co" class="link dim black-50">andre@mtzz.co</a>
-				</div>
-			</div>
-			<!-- Nav -->
-			<nav class="mt6 mt5-m mt0-ns w-100-m w-50-ns self-end-ns">
+		<!-- Name & Email -->
+		<!-- Nav -->
+		<div class="flex-ns">
+			<nav class="mt6 mt5-m mt0-ns w-100-m w-50-ns top-0">
 				<ul class="list pl0 flex flex-wrap items-start">
-					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1 bb">Projetos</a></li>
-					<li class="mr4 mt2 mt0-ns"><a href="./escrita" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f5 f6-ns pv1">Escrita</a></li>
-					<!-- <li class="mr4"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent ttu tracked link dim f6">Leituras</a></li> -->
+					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns silver b--accent link f5 pv1 bb bw1">Design</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="./escrita" class="dib mb3 mb3-m mb0-ns silver accent-hover link f5 pv1">Escrita</a></li>
 				</ul>
 			</nav>
+			<h1 class="f5 mv0 w-50-ns tr">André Matiazzo</h1>
 		</div>
-
-		<!-- Título da Página -->
-		<div class="flex-ns">
-			<div class="w-50-ns mw6 dn dn-m db-ns"></div>
-			<h2 class="w-100-m w-50-ns mt4 mt5-ns f1 f1-m f-headline-ns">Projetos</h2>
+		<!-- Presentation -->
+		<div class="w-100 w-50-ns">
+			<p class="mt5-ns f3 lh-copy">
+				Designer interessado em aproximar pontas. Atualmente, designer de produtos na Sympla.				
+			</p>
 		</div>
 
 		<!-- Projetos: Wavy -->
-		<section class="mt4 mt5-ns">
-			<div class="nl3 nr3 mh0-ns relative">
-				<img src="../img/wavy01.png" class="shadow-0 w-100 mw8" alt="Imagem mostra Dashboard com resultados de envio">
-				<div class="dn dn-m db-ns absolute mw6 right-0 top-0 mt6 pl4-ns">
-					<div class="mt4 pl6-ns">
-						<img src="../img/wavy03.png" class="shadow-0" alt="Imagem mostra um gráfico em barras">
-					</div>
-					<img src="../img/wavy02.png" class="shadow-0 mt4" alt="Imagem mostra um comentário no GitHub">
+		<section class="mt5-ns">
+			<div class="pl7">
+				<div class="nl3 nr3 mh0-ns">
+					<img src="../img/wavy01.png" class="db shadow-0" alt="Imagem mostra Dashboard com resultados de envio">
 				</div>
-			</div>
-			<!-- Project infos -->
-			<div class="mt3 mt3-m mt5-ns ml0 ml0-m ml4-ns pl0 pl0-m pl6-ns">
-				<span class="black-50">2017</span>
-				<h3 class="f3 f2-ns mt3">Wavy</h3>
-				<div class="mt2 mt2-m mt3-ns flex-ns">
-					<p class="lh-copy measure pr0-m pr5-m pr5-ns">
-						Ajudei a refazer a interface do Wavy, um produto para empresas que se comunicam por SMS. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz.
-						<a href="./projetos/wavy" class="mt4 dim db accent cb">Veja em detalhes &#10168;</a>
-					</p>
-					<ul class="pl0 pl0-m pl4-ns list lh-copy black-50 mt4 mt0-m mt0-ns">
-						<li class="b black ttu tracked f6">O que fiz</li>
-						<li class="mt1">Arquitetura da informação</li>
-						<li class="mt1">Design de interação</li>
-						<li class="mt1">Identidade visual</li>
-						<li class="mt1">HTML + CSS</li>
-						<li class="mt1">Escrita</li>
-					</ul>
+				<!-- Project infos -->
+				<div class="mw8 flex">
+					<div class="w4 pr4">
+						<h3 class="f5 mt4-ns">Wavy</h3>
+					</div>
+					<div class="mt4-ns">
+						<p class="lh-copy measure">
+							Ajudei a refazer a interface do Wavy, um produto para empresas que se comunicam por SMS. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz.
+						</p>
+						<a href="./projetos/wavy" class="b db mt4 ttu tracked-mega link f6 dim accent">Veja o projeto</a>
+					</div>
 				</div>
 			</div>
 		</section>
