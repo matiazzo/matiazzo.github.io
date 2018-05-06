@@ -47,7 +47,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Martel:400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500" rel="stylesheet">
 
 	<!-- Google Analytics -->
 	<script>
@@ -61,10 +61,21 @@
 
 	</script>
 
+	<script src="js/lazysizes.min.js" async=""></script>
+
 	<style>
-	* {margin: 0;}
+	* {
+		margin: 0;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-feature-settings:"kern" 1;
+		-ms-font-feature-settings:"kern" 1;
+		-o-font-feature-settings:"kern" 1;
+		-webkit-font-feature-settings:"kern" 1;
+		font-feature-settings:"kern" 1;
+		font-kerning:normal
+	}
 	body {
-		/*background: #FFFCFB;*/
+		background: #FFFCFB;
 		background-image: url(../img/bg.png);
 		background-attachment: fixed;
 		font-family: 'Work Sans', sans-serif;
@@ -72,149 +83,156 @@
 	.accent {color: #ff9778;}
 	.accent-hover:hover {color: #ff9778;}
 	.b--accent {border-color: #ff9778;}
-	.f5 {font-size: 1.15rem;}
 	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
-	.plex {font-family: 'IBM Plex Serif';}
-	.martel {font-family: Martel; font-weight: 400;}
+	.abhaya-n {font-family: 'Abhaya Libre', serif; font-weight: 400}
+	.abhaya-b {font-family: 'Abhaya Libre', serif; font-weight: 500}
+	@media (max-width: 30em) {.shadow-none-sm {box-shadow: none;}}
+	@media (max-width: 70em) {.hide-hack {display: none}}
 </style>
 </head>
 <body class="mid-gray">
 	<!-- Wrapper -->
-	<main class="pa5-ns mw9">
-		<!-- Name & Email -->
+	<main class="pa4 pa5-l center mw9">
 		<!-- Nav -->
-		<div class="flex-ns">
-			<nav class="mt6 mt5-m mt0-ns w-100-m w-50-ns top-0">
+		<h1 class="f4 lh-solid mv0 w-100">André Matiazzo</h1>
+		<!-- Intro -->
+		<div class="flex-l">
+			<nav class="mt2 mt6-l w-100 w5-l">
 				<ul class="list pl0 flex flex-wrap items-start">
-					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent b--accent link f5 pv1 bb bw1">Design</a></li>
-					<li class="mr4 mt2 mt0-ns"><a href="./escrita" class="dib mb3 mb3-m mb0-ns silver accent-hover link f5 pv1">Escrita</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent b--accent link f4 f5-m pv1 bb">Design</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="./escrita" class="dib mb3 mb3-m mb0-ns silver accent-hover link f4 f5-m pv1">Escrita</a></li>
 				</ul>
 			</nav>
-			<h1 class="f5 mv0 w-50-ns tr fixed right-0 mr5">André Matiazzo</h1>
+			<p class="f3 f2-ns lh-title ml6-m mt6 mw6 pr abhaya-n">
+				Designer de produtos ajudando a <a class="mid-gray link bb b--accent accent-hover" href="http://sympla.com.br/">Sympla</a> a tornar compreensível o que for complexo.
+			</p>
 		</div>
-		<!-- Intro -->
-		<p class="mt6-ns f2 lh-title b pr6 mw8">
-			Designer que nunca se interessou em ser uma coisa só. Um eterno generalista.
-		</p>
 
-		<!-- Presentation -->
-		<div class="ph6 lh-copy f4 mw8">
-			<p class="mt5">
-				Antes de designer, achei até que seria jornalista. Dessa época, mantenho a curiosidade e humildade de quem sabe que informação nunca é demais.
-			</p>
-			<p class="mt4">
-				Esses interesses encontram espaço também no design de interfaces e se condensam, em mim, numa postura de facilitador de informações: gosto de atuar tanto no que é básico do design de interfaces — ajudando pessoas a entender o que acontece em um sistema e a manipular as informações que encontram —, quanto em áreas que, normalmente, não são território de designers — revisando textos de documentação de API ou aprendendo HTML e CSS para poder implementar meus layouts do jeito que eu os tinha desenhado.
-			</p>
-		</div>
+		<h2 class="mt5 mb3 f5 dn-ns">Projetos recentes</h2>
 
 		<!-- Projetos: Wavy -->
-		<section class="mt5-ns">
-			<div class="mw8">
-				<div class="nl3 nr3 mh0-ns">
-					<img src="../img/wavy01.png" class="db shadow-0" alt="Imagem mostra Dashboard com resultados de envio">
+		<section class="mt6-ns">
+			<div class="ml6-m ml7-l">
+				<picture>
+					<source media="(max-width: 30em)" srcset="../img/wavy-thumb-sm.png" class="shadow-none-sm shadow-0">
+						<img src="../img/wavy1.png" alt="Prévia do projeto Wavy" class="shadow-none-sm shadow-0">
+					</picture>
 				</div>
 				<!-- Project infos -->
-				<div class="mw8 flex">
-					<div class="w4 pr4">
-						<h3 class="f5 mt4-ns">Wavy</h3>
+				<div class="flex-ns ml6-l">
+					<div class="flex justify-between db-ns w5-ns mw4-ns">
+						<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">Wavy</h3>
+						<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2017</h4>
 					</div>
-					<div class="mt4-ns">
-						<p class="lh-copy measure">
-							Ajudei a refazer a interface do Wavy, um produto para empresas que se comunicam por SMS. O projeto também envolveu a preparação da interface para receber outros dois canais: email e voz.
+					<div class="mt2 mt3-m mt4-l">
+						<p class="lh-copy measure abhaya-b f4">
+							Ajudei a refazer a interface do Wavy, um produto da <a href="https://movile.com/#/" class="mid-gray link bb b--accent accent-hover">Movile</a> para empresas que se comunicam por SMS. O projeto também se preocupou em adaptar a interface para receber outros dois canais: email e voz.
 						</p>
-						<a href="./projetos/wavy" class="b db mt4 ttu tracked-mega link f6 dim accent">Veja o projeto</a>
+						<a href="./projetos/wavy" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja em detalhes</a>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<!-- Projetos: DiaTipo Campinas -->
-		<section class="mt6 db-m flex-ns">
-			<!-- Project infos -->
-			<div class="w-100-ns mw7 order-1 nl3 nr3 mh0-ns">
-				<img src="../img/diatipo.png" alt="Imagem mostra versões do site para o DiaTipo Campinas" class="db w-100">
-			</div>
-			<div class="w-100-m w-40-ns order-0 mt3 mt3-m mt0-ns self-end">
-				<span class="black-50">2016</span>
-				<h3 class="f3 f2-ns mt3">DiaTipo</h3>
-				<div class="mt2 mt2-m mt3-ns">
-					<p class="lh-copy measure pr0-m pr5-ns">
-						Site para a edição de 2016 do evento de tipografia DiaTipo Campinas.
-					</p>
-					<ul class="pl0 list lh-copy black-50 mt4">
-						<li class="b black ttu tracked f6">O que fiz</li>
-						<li class="mt1">Identidade visual</li>
-						<li class="mt1">Interface</li>
-						<li class="mt1">Frontend</li>
-					</ul>
-					<a href="http://www.diatipo.com.br/campinas/" target="_blank" class="mt4 dim dib accent cb">Veja online &#10169;</a>
-				</div>
-			</div>
-		</section>
+			<!-- Projetos: Pickers -->
+			<section class="mt6 pt4-l">
+				<div class="nl3-ns nr3-ns">
+					<picture class="dn-ns">
+						<source media="(max-width: 30em)" srcset="../img/pickers-thumb-sm.png" class="shadow-none-sm shadow-0">
+							<img src="../img/wavy01.png" alt="Amostra do projeto Pickers" class="shadow-none-sm shadow-0">
+						</picture>
+						<div class="flex-ns flex-wrap ml6-m mw8-l">
+							<div class="dn db-l w5 ph3-ns mt4-ns hide-hack">
+								<img src="../img/pickers-01.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+							</div>
+							<div class="dn db-ns w5 ph3-ns mt4-ns">
+								<img src="../img/pickers-02.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+							</div>
+							<div class="dn db-l w5 ph3-ns mt4-ns">
+								<img src="../img/pickers-04.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+							</div>
+							<div class="dn db-ns w5 ph3-ns mt4-ns">
+								<img src="../img/pickers-03.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+							</div>
+						</div>
+					</div>
+					<!-- Project infos -->
+					<div class="ml6-l">
+						<div class="flex-ns ml7-l">
+							<div class="flex justify-between db-ns w5-ns mw4-ns">
+								<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">Pickers</h3>
+								<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2016</h4>
+							</div>
+							<div class="mt2 mt3-m mt4-l">
+								<p class="lh-copy measure abhaya-b f4">
+									Identidade visual e design das interações para um app híbrido que ajuda pessoas indecisas. Elas escolhem entre fotos, vídeos e GIFs para montar um mosaico, fazem uma pergunta e a comunidade dos Pickers as ajuda a escolher.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
 
-		<!-- Projetos: Pickers -->
-		<section class="mt6">
-			<div class="nl3 nr3 mh0-ns">
-				<img src="../img/pickers.png" alt="Imagem mostra telas do aplicativo Pickers">
-			</div>
-			<!-- Project infos -->
-			<div class="mt3 mt3-m mt0-ns" id="pickers">
-				<span class="black-50">2016</span>
-				<h3 class="f3 f2-ns mt3">Pickers</h3>
-				<div class="mt2 mt2-m mt3-ns db-m flex-ns">
-					<p class="lh-copy measure pr0-m pr5-ns">
-						Um app de pesquisas para indecisos. Você escolhe entre fotos, vídeos e GIFs para montar um mosaico, faz sua pergunta e a comunidade dos Pickers te ajuda a escolher. App híbrido para iOS e Android.
-					</p>
-					<ul class="pl0 pl0-m pl4-ns list lh-copy black-50 mt4 mt4-m mt0-ns">
-						<li class="b black ttu tracked f6">O que fiz</li>
-						<li class="mt1">Interações</li>
-						<li class="mt1">Identidade visual</li>
-						<li class="mt1">Interface</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+				<!-- Projetos: DiaTipo Campinas -->
+				<section class="mt6 pt5-l">
+					<div class="nl3-l nr3-l">
+						<div class="ml6-m ml7-l">
+							<picture class="dn-ns">
+								<source media="(max-width: 30em)" srcset="../img/diatipo-thumb-sm.png" class="shadow-none-sm shadow-0">
+									<img src="../img/wavy01.png" alt="Amostra do projeto Diatipo" class="shadow-none-sm shadow-0">
+								</picture>
+								<div class="flex-l items-end">
+									<div class="dn db-ns mw7-l ph3-l">
+										<img src="../img/diatipo-l.png" class="db shadow-0" alt="Imagem mostra Dashboard com resultados de envio">
+									</div>
+									<div class="dn db-l w5 ph3">
+										<img src="../img/diatipo-sm.png" class="db shadow-0 w-100" alt="Imagem mostra Dashboard com resultados de envio">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Project infos -->
+						<div class="mw8">
+							<div class="flex-ns">
+								<div class="flex justify-between db-ns w5-ns mw4-m">
+									<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">DiaTipo<span class="dn-m"> Campinas</span></h3>
+									<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2016</h4>
+								</div>
+								<div class="mt2 mt3-m mt4-l">
+									<p class="lh-copy measure-narrow abhaya-b f4">
+										Identidade visual e frontend para o site do DiaTipo Campinas 2016.
+									</p>
+									<a href="http://www.diatipo.com.br/campinas/" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja online <span class="f6">&rarr;</span></a>
+								</div>
+							</div>
+						</div>
+					</section>
 
-		<!-- Projetos: PlayKids -->
-		<section class="mt6 db-m flex-ns">
-			<div class="mw7 nl3 nr3 mh0-ns">
-				<img src="../img/playkids.png" alt="Imagem mostra versões do site para o site do PlayKids">
-			</div>
-			<!-- Project infos -->
-			<div class="w-100-m w-40-ns pl0-m pl5-ns mt3 mt3-m mt0-ns">
-				<span class="black-50">2015</span>
-				<h3 class="f3 f2-ns mt3">PlayKids</h3>
-				<div class="w-100 mt2 mt2-m mt3-ns">
-					<p class="lh-copy measure-narrow">
-						Frontend para o site da PlayKids e adaptação da interface (feita pelo <a href="http://www.maksonserpa.com.br/" class="accent" target="_blank">Makson Serpa</a>) para as versões de tablets e smartphones.
-					</p>
-					<div class="flex flex-m justify-between justify-start-m db-ns">
-						<ul class="pl0 list lh-copy black-50 cl mt4">
-							<li class="b black ttu tracked f6">O que fiz</li>
-							<li class="mt1">Frontend</li>
-							<li class="mt1">Interface</li>
+					<footer class="pt4 mt7">
+						<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between silver f5 f6-l lh-copy lh-solid-l">
+							<li class="pb2 pb0-ns w5-m mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
+							<div class="tr-l">
+								<li class="pv1-ns db di-ns">
+									Construído com
+								</li>
+								<li class="pv2 pv1-ns db di-ns">
+									<a href="http://tachyons.io" target="_blank" class="link bb b--accent mid-gray accent-hover">tachyons</a> + 
+								</li>
+								<li class="pv2 pv1-ns db di-ns"><a href="https://fonts.google.com/specimen/Work+Sans" target="_blank" class="link bb b--accent mid-gray accent-hover">Work Sans</a> + 
+								</li>
+								<li class="pv2 pv1-ns db di-ns"><a href="https://https://fonts.google.com/specimen/Abhaya+Libre" target="_blank" class="link bb b--accent mid-gray accent-hover">Abhaya Libre</a>
+								</li>
+							</div>
 						</ul>
-					</div>
+					</footer>
+
+
+				</main>
+
+				<!-- Rerence grid -->
+				<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
+					<div class="fl w-25 bl br b--black-10 h-100"></div>
+					<div class="fl w-25 br b--black-10 h-100"></div>
+					<div class="fl w-25 br b--black-10 h-100"></div>
+					<div class="fl w-25 br b--black-10 h-100"></div>
 				</div>
-			</div>
-		</section>
-
-		<footer class="bt b--black-20 pt4 pt5-ns mt6">
-			<ul class="list pl0 db-m flex-ns justify-between black-50 f6 lh-copy">
-				<li class="pv1 w-100-m w-50-ns mw6"><span class="b f6">&#10000;</span> <a href="http://tachyons.io" target="_blank" class="accent">tachyons</a> + <a href="https://fonts.google.com/specimen/Work+Sans" target="_blank" class="accent">Work Sans</a></li>
-				<li class="pv1 mw7-ns">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> André Matiazzo</li>
-			</ul>
-		</footer>
-
-
-	</main>
-
-	<!-- Rerence grid -->
-	<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
-		<div class="fl w-25 bl br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-	</div>
-</body>
-</html>
+			</body>
+			</html>
