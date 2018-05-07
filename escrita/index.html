@@ -80,6 +80,7 @@
 		font-family: 'Work Sans', sans-serif;
 	}
 	.accent {color: #ff9778;}
+	.bg-accent {background-color: #ff9778}
 	.accent-hover:hover {color: #ff9778;}
 	.b--accent {border-color: #ff9778;}
 	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
@@ -93,7 +94,7 @@
 </head>
 <body class="mid-gray">
 	<!-- Wrapper -->
-	<main class="pa4 pa5-l center mw9">
+	<main class="pa4 pa5-l center mw9 relative">
 		<!-- Nav -->
 		<h1 class="f4 lh-solid mv0 w-100">André Matiazzo</h1>
 		<!-- Intro -->
@@ -108,29 +109,14 @@
 				<p>
 					Escrever me ajuda a enxergar e reorganizar o que penso. Uso como ferramenta em projetos de design e também para olhar com mais calma qualquer tipo de informação ou percepção de mundo.
 				</p>
-				<p class="mt4">
+<!-- 				<p class="mt4">
 					Para escrever com mais frequência, criei a <a class="work-sans ttu tracked-mega b f4 f3-ns mid-gray link bb b--accent accent-hover" href="http://tinyletter.com/mtzzine">mtzzine</a>. Ela é voz que diz "ó, precisa escrever outra edição porque tem gente esperando".
-				</p>
+				</p> -->
 			</div>
 		</div>
-
-		<!-- Edições -->
-<!-- 		<div class="ml7-l mw7 mt4">
-			<h2 class="f4 f5-ns">Edições</h2>
-			<ul class="list pl0 b flex flex-wrap" id="editions">
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#007" class="link accent">007</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#006" class="link accent">006</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#005_5" class="link accent">005.5</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#005" class="link accent">005</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#004" class="link accent">004</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#003" class="link accent">003</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#002" class="link accent">002</a></li>
-				<li class="fl mr4 mt4 mt3-ns f4 f5-ns"><a href="#001" class="link accent">001</a></li>
-			</ul>
-		</div> -->
 		
-		<main class="mt6">
-			<h2 class="ml7-l f4 f5-ns mb3-l">Edições</h2>
+		<main class="mt7">
+			<h2 class="ml7-l f4 tracked-mega ttu f5-ns mb3-l">MTZZINE</h2>
 			<!-- Ed. 008 -->
 			<section class="flex-l bb b--black-20 b--dashed bl-0 br-0 bt-0 pb4">
 				<time class="f6 w5 mt4 pt1 silver">12 Nov 2017</time>
@@ -196,12 +182,22 @@
 			</section>
 		</main>
 
-		<footer class="pt4 mt7">
-			<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between silver f5 f6-l lh-copy lh-solid-l">
-				<li class="pb2 pb0-ns w5-m mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
+		<form class="ml7 mt7 mw7" action="https://tinyletter.com/mtzzine" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/mtzzine', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+			<label for="tlemail" class="b f4 lh-title">Você pode receber meus textos por email</label>
+			<p class="mw6 lh-copy mt3 abhaya-b f4">Escrevo sobre tecnologia, sociedade e qualquer interesse que eu tenha no momento. Também mando uns links interessantes para você nunca mais ficar sem assunto na fila do banco.</p>
+			<div class="flex-l mt3">
+				<input type="text" placeholder="Seu email" name="email" id="tlemail" class="ba b--black-20 br1 work-sans db mt3 pa3 w-50 mw6" />
+				<input type="hidden" value="1" name="embed"/>
+				<input type="submit" value="Quero me inscrever" class="pointer mt3 ml3 work-sans white b b--accent pa3 br1 bg-accent" />
+			</div>
+		</form>
+
+		<footer class="pt5 mt6">
+			<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between justify-start-ns silver f5 f6-l lh-copy lh-solid-l">
+				<li class="pb2 pb0-ns w5-ns mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
 				<div class="tr-l">
 					<li class="pv1-ns db di-ns">
-						Construído com
+						Site construído com
 					</li>
 					<li class="pv2 pv1-ns db di-ns">
 						<a href="http://tachyons.io" target="_blank" class="link bb b--accent mid-gray accent-hover">tachyons</a> + 
@@ -214,15 +210,11 @@
 			</ul>
 		</footer>
 
+		<a href="javascript:;" onclick="topFunction()" class="absolute accent-hover bottom-1 bottom-0-m db link mb3-m mb4 mr3-m mr4 normal pa3 right-1 right-0-m rotate-270 silver">&#10140;</a>
 
 	</main>
 
-	<!-- Rerence grid -->
-	<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
-		<div class="fl w-25 bl br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-		<div class="fl w-25 br b--black-10 h-100"></div>
-	</div>
+	<script type=text/javascript src="../../js/scrollTop.js"></script>
+
 </body>
 </html>

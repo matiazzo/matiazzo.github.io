@@ -11,20 +11,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="canonical" href="http://mtzz.co/">
 
-	<link rel="apple-touch-icon" sizes="57x57" href="../fav/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="../fav/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="../fav/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="../fav/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="../fav/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="../fav/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="../fav/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="../fav/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="../fav/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="../fav/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="../fav/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../fav/favicon-16x16.png">
-	<link rel="manifest" href="../fav/manifest.json">
+	<link rel="apple-touch-icon" sizes="57x57" href="./fav/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./fav/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./fav/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./fav/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./fav/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./fav/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./fav/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./fav/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./fav/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./fav/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+	<link rel="manifest" href="./fav/manifest.json">
 	<meta name="msapplication-TileColor" content="#FFFCFB">
 	<meta name="msapplication-TileImage" content="../fav/ms-icon-144x144.png">
 	<meta name="theme-color" content="#FFFCFB">
@@ -80,18 +80,21 @@
 		font-family: 'Work Sans', sans-serif;
 	}
 	.accent {color: #ff9778;}
+	.bg-accent {background-color: #ff9778}
 	.accent-hover:hover {color: #ff9778;}
 	.b--accent {border-color: #ff9778;}
 	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
+	.work-sans {font-family: 'Work Sans', sans-serif;}
 	.abhaya-n {font-family: 'Abhaya Libre', serif; font-weight: 400}
 	.abhaya-b {font-family: 'Abhaya Libre', serif; font-weight: 500}
+	.abhaya-xb {font-family: 'Abhaya Libre', serif; font-weight: 700}
 	@media (max-width: 30em) {.shadow-none-sm {box-shadow: none;}}
 	@media (max-width: 70em) {.hide-hack {display: none}}
 </style>
 </head>
 <body class="mid-gray">
 	<!-- Wrapper -->
-	<main class="pa4 pa5-l center mw9">
+	<main class="pa4 pa5-l center mw9 relative">
 		<!-- Nav -->
 		<h1 class="f4 lh-solid mv0 w-100">André Matiazzo</h1>
 		<!-- Intro -->
@@ -199,18 +202,28 @@
 									<p class="lh-copy measure-narrow abhaya-b f4">
 										Identidade visual e frontend para o site do DiaTipo Campinas 2016.
 									</p>
-									<a href="http://www.diatipo.com.br/campinas/" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja online <span class="f6">&rarr;</span></a>
+									<a href="http://www.diatipo.com.br/campinas/" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja online <span class="f7 normal">&#10140;</span></a>
 								</div>
 							</div>
 						</div>
 					</section>
 
-					<footer class="pt4 mt7">
-						<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between silver f5 f6-l lh-copy lh-solid-l">
-							<li class="pb2 pb0-ns w5-m mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
+					<form class="ml7 mt7 mw7" action="https://tinyletter.com/mtzzine" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/mtzzine', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+						<label for="tlemail" class="b f4 lh-title">Também sou um designer que escreve&trade;</label>
+						<p class="mw6 lh-copy mt3 abhaya-b f4">Não escrevo tanto sobre design, mas exploro áreas próximas como tecnologia e sociedade, por exemplo. Você pode ler o que já escrevi <a href="./escrita" class="mid-gray link bb b--accent accent-hover">aqui</a> e também receber os próximos textos por email.</p>
+						<div class="flex-l mt3">
+							<input type="text" placeholder="Seu email" name="email" id="tlemail" class="ba b--black-20 br1 work-sans db mt3 pa3 w-50 mw6" />
+							<input type="hidden" value="1" name="embed"/>
+							<input type="submit" value="Quero me inscrever" class="pointer mt3 ml3 work-sans white b b--accent pa3 br1 bg-accent" />
+						</div>
+					</form>
+
+					<footer class="pt5 mt6">
+						<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between justify-start-ns silver f5 f6-l lh-copy lh-solid-l">
+							<li class="pb2 pb0-ns w5-ns mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
 							<div class="tr-l">
 								<li class="pv1-ns db di-ns">
-									Construído com
+									Site construído com
 								</li>
 								<li class="pv2 pv1-ns db di-ns">
 									<a href="http://tachyons.io" target="_blank" class="link bb b--accent mid-gray accent-hover">tachyons</a> + 
@@ -223,15 +236,10 @@
 						</ul>
 					</footer>
 
+					<a href="javascript:;" onclick="topFunction()" class="absolute accent-hover bottom-1 bottom-0-m db link mb3-m mb4 mr3-m mr4 normal pa3 right-1 right-0-m rotate-270 silver">&#10140;</a>
 
 				</main>
 
-				<!-- Rerence grid -->
-				<div class="fixed left-0 right-0 top-0 bottom-0 mw9 vh-100 ph5 dn" style="z-index: -999;">
-					<div class="fl w-25 bl br b--black-10 h-100"></div>
-					<div class="fl w-25 br b--black-10 h-100"></div>
-					<div class="fl w-25 br b--black-10 h-100"></div>
-					<div class="fl w-25 br b--black-10 h-100"></div>
-				</div>
+				<script type=text/javascript src="js/scrollTop.js"></script>
 			</body>
 			</html>
