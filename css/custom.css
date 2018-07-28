@@ -1,0 +1,36 @@
+	* {
+		margin: 0;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-feature-settings:"kern" 1;
+		-ms-font-feature-settings:"kern" 1;
+		-o-font-feature-settings:"kern" 1;
+		-webkit-font-feature-settings:"kern" 1;
+		font-feature-settings:"kern" 1;
+		font-kerning:normal
+	}
+	body {
+		background: #FFFCFB;
+		background-image: url(../../../img/bg.png);
+		background-attachment: fixed;
+		font-family: 'Work Sans', sans-serif;
+	}
+	
+	/*Para tirar os pontinhos de tras dos textos da newsletter*/
+	article p,
+	article blockquote {
+		background: #FFFCFB;
+	}
+
+	.accent {color: #ff9778;}
+	.bg-accent {background-color: #ff9778}
+	.accent-hover:hover {color: #ff9778;}
+	.b--accent {border-color: #ff9778;}
+	.mid-gray {color: #4c4646}
+	.silver {color: #9c9999}
+	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;}
+	.work-sans {font-family: 'Work Sans', sans-serif;}
+	.abhaya-n {font-family: 'Abhaya Libre', serif; font-weight: 400}
+	.abhaya-b {font-family: 'Abhaya Libre', serif; font-weight: 500}
+	.abhaya-xb {font-family: 'Abhaya Libre', serif; font-weight: 700}
+	@media (max-width: 30em) {.shadow-none-sm {box-shadow: none;}}
+	@media (max-width: 70em) {.hide-hack {display: none}}

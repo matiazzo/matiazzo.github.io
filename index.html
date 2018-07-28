@@ -47,8 +47,9 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+	<link rel="stylesheet" href="../../css/custom.css">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500,700" rel="stylesheet">
 
 	<!-- Google Analytics -->
 	<script>
@@ -61,53 +62,28 @@
 		ga('send', 'pageview');
 
 	</script>
-
-	<style>
-	* {
-		margin: 0;
-		-webkit-font-smoothing:antialiased;
-		-moz-font-feature-settings:"kern" 1;
-		-ms-font-feature-settings:"kern" 1;
-		-o-font-feature-settings:"kern" 1;
-		-webkit-font-feature-settings:"kern" 1;
-		font-feature-settings:"kern" 1;
-		font-kerning:normal
-	}
-	body {
-		background: #FFFCFB;
-		background-image: url(../img/bg.png);
-		background-attachment: fixed;
-		font-family: 'Work Sans', sans-serif;
-	}
-	.accent {color: #ff9778;}
-	.bg-accent {background-color: #ff9778}
-	.accent-hover:hover {color: #ff9778;}
-	.b--accent {border-color: #ff9778;}
-	.shadow-0 {box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;}
-	.work-sans {font-family: 'Work Sans', sans-serif;}
-	.abhaya-n {font-family: 'Abhaya Libre', serif; font-weight: 400}
-	.abhaya-b {font-family: 'Abhaya Libre', serif; font-weight: 500}
-	.abhaya-xb {font-family: 'Abhaya Libre', serif; font-weight: 700}
-	@media (max-width: 30em) {.shadow-none-sm {box-shadow: none;}}
-	@media (max-width: 70em) {.hide-hack {display: none}}
-</style>
 </head>
 <body class="mid-gray">
 	<!-- Wrapper -->
 	<main class="pa4 pa5-l center mw9 relative">
-		<!-- Nav -->
-		<h1 class="f4 lh-solid mv0 w-100">André Matiazzo</h1>
+		<div class="flex justify-between">
+			<!-- Name -->
+			<h1 class="f4 lh-solid mv0">André Matiazzo</h1>
+		</div>
 		<!-- Intro -->
-		<div class="flex-l">
-			<nav class="mt2 mt6-l w-100 w5-l">
+		<div class="flex-l relative">
+			<nav class="mt2 mt4-m mt6-l w-100 w5-l">
 				<ul class="list pl0 flex flex-wrap items-start">
-					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent b--accent link f4 f5-m pv1 bb">Design</a></li>
-					<li class="mr4 mt2 mt0-ns"><a href="./escrita" class="dib mb3 mb3-m mb0-ns silver accent-hover link f4 f5-m pv1">Escrita</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="javascript:;" class="dib mb3 mb3-m mb0-ns accent b--accent link f4 pv1 bb">Design</a></li>
+					<li class="mr4 mt2 mt0-ns"><a href="./newsletter" class="dib mb3 mb3-m mb0-ns silver accent-hover link f4 pv1">Newsletter</a></li>
 				</ul>
 			</nav>
-			<p class="f3 f2-ns lh-title ml6-m mt6 mw6 pr abhaya-n">
+			<p class="f2 lh-title ml6-m mt6 mw6 pr abhaya-n">
 				Designer de produtos ajudando a <a class="mid-gray link bb b--accent accent-hover" href="http://sympla.com.br/">Sympla</a> a tornar compreensível o que for complexo.
 			</p>
+			<!-- <div class="tr absolute right-0">
+				<a href="../" class="silver link dib mt6-l lh-copy pt2 link f5 accent-hover">andre@mtzz.co</a>
+			</div> -->
 		</div>
 
 		<h2 class="mt5 mb3 f5 dn-ns">Projetos recentes</h2>
@@ -115,19 +91,21 @@
 		<!-- Projetos: Wavy -->
 		<section class="mt6-ns">
 			<div class="ml6-m ml7-l">
-				<picture>
-					<source media="(max-width: 30em)" srcset="../img/wavy-thumb-sm.png" class="shadow-none-sm shadow-0">
-						<img src="../img/wavy.png" alt="Prévia do projeto Wavy" class="shadow-none-sm shadow-0">
-					</picture>
+				<a href="./projetos/wavy" class="db">
+					<picture>
+						<source media="(max-width: 30em)" srcset="../img/wavy-thumb-sm.png" class="shadow-none-sm shadow-0">
+							<img src="../img/wavy.png" alt="Prévia do projeto Wavy" class="db shadow-none-sm shadow-0">
+						</picture>
+					</a>
 				</div>
 				<!-- Project infos -->
 				<div class="flex-ns ml6-l">
 					<div class="flex justify-between db-ns w5-ns mw4-ns">
-						<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">Wavy</h3>
-						<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2017</h4>
+						<h3 class="f4 mt3 mt4-l lh-copy mr3 mr0-l">Wavy</h3>
+						<h4 class="silver lh-title f5 normal pt2 pt0-ns mt3">2017</h4>
 					</div>
 					<div class="mt2 mt3-m mt4-l">
-						<p class="lh-copy measure abhaya-b f4">
+						<p class="lh-copy measure abhaya-b f3">
 							Ajudei a refazer a interface do Wavy, um produto da <a href="https://movile.com/#/" class="mid-gray link bb b--accent accent-hover">Movile</a> para empresas que se comunicam por SMS. O projeto também se preocupou em adaptar a interface para receber outros dois canais: email e voz.
 						</p>
 						<a href="./projetos/wavy" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja em detalhes</a>
@@ -137,23 +115,23 @@
 
 			<!-- Projetos: Pickers -->
 			<section class="mt6 pt4-l">
-				<div class="nl3-ns nr3-ns">
+				<div class="mh0 nl3-ns nr3-ns">
 					<picture class="dn-ns">
 						<source media="(max-width: 30em)" srcset="../img/pickers-thumb-sm.png" class="shadow-none-sm shadow-0">
 							<img src="../img/pickers-thumb-sm.png" alt="Amostra do projeto Pickers" class="shadow-none-sm shadow-0">
 						</picture>
 						<div class="flex-ns flex-wrap ml6-m mw8-l">
 							<div class="dn db-l w5 ph3-ns mt4-ns hide-hack">
-								<img src="../img/pickers-01.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+								<img src="../img/pickers-01.png" class="db shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
 							</div>
 							<div class="dn db-ns w5 ph3-ns mt4-ns">
-								<img src="../img/pickers-02.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+								<img src="../img/pickers-02.png" class="db shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
 							</div>
 							<div class="dn db-l w5 ph3-ns mt4-ns">
-								<img src="../img/pickers-04.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+								<img src="../img/pickers-04.png" class="db shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
 							</div>
 							<div class="dn db-ns w5 ph3-ns mt4-ns">
-								<img src="../img/pickers-03.png" class="shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
+								<img src="../img/pickers-03.png" class="db shadow-0" alt="Imagem mostra telas do aplicativo Pickers">
 							</div>
 						</div>
 					</div>
@@ -161,11 +139,11 @@
 					<div class="ml6-l">
 						<div class="flex-ns ml7-l">
 							<div class="flex justify-between db-ns w5-ns mw4-ns">
-								<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">Pickers</h3>
-								<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2016</h4>
+								<h3 class="f4 mt3 mt4-l lh-copy mr3 mr0-l">Pickers</h3>
+								<h4 class="silver lh-title f5 normal pt2 pt0-ns mt3">2016</h4>
 							</div>
 							<div class="mt2 mt3-m mt4-l">
-								<p class="lh-copy measure abhaya-b f4">
+								<p class="lh-copy measure abhaya-b f3">
 									Identidade visual e design das interações para um app híbrido que ajuda pessoas indecisas. Elas escolhem entre fotos, vídeos e GIFs para montar um mosaico, fazem uma pergunta e a comunidade dos Pickers as ajuda a escolher.
 								</p>
 							</div>
@@ -175,31 +153,33 @@
 
 				<!-- Projetos: DiaTipo Campinas -->
 				<section class="mt6 pt5-l">
-					<div class="nl3-l nr3-l">
+					<div class="mh0 nl3-ns nr3-ns">
 						<div class="ml6-m ml7-l">
-							<picture class="dn-ns">
-								<source media="(max-width: 30em)" srcset="../img/diatipo-thumb-sm.png" class="shadow-none-sm shadow-0">
-									<img src="../img/diatipo-thumb-sm.png" alt="Amostra do projeto Diatipo" class="shadow-none-sm shadow-0">
-								</picture>
-								<div class="flex-l items-end">
-									<div class="dn db-ns mw7-l ph3-l">
-										<img src="../img/diatipo-l.png" class="db shadow-0" alt="Imagem mostra Dashboard com resultados de envio">
+							<a href="http://www.diatipo.com.br/campinas/" class="db">
+								<picture class="dn-ns">
+									<source media="(max-width: 30em)" srcset="../img/diatipo-thumb-sm.png" class="shadow-none-sm shadow-0">
+										<img src="../img/diatipo-thumb-sm.png" alt="Amostra do projeto Diatipo" class="db shadow-none-sm shadow-0">
+									</picture>
+									<div class="flex-l items-end">
+										<div class="dn db-ns mw7-l ph3-l">
+											<img src="../img/diatipo-l.png" class="db shadow-0" alt="Imagem mostra Dashboard com resultados de envio">
+										</div>
+										<div class="dn db-l w5 ph3">
+											<img src="../img/diatipo-sm.png" class="db shadow-0 w-100" alt="Imagem mostra Dashboard com resultados de envio">
+										</div>
 									</div>
-									<div class="dn db-l w5 ph3">
-										<img src="../img/diatipo-sm.png" class="db shadow-0 w-100" alt="Imagem mostra Dashboard com resultados de envio">
-									</div>
-								</div>
+								</a>
 							</div>
 						</div>
 						<!-- Project infos -->
 						<div class="mw8">
 							<div class="flex-ns">
 								<div class="flex justify-between db-ns w5-ns mw4-m">
-									<h3 class="f4 mt3 mt4-l lh-title mr3 mr0-l">DiaTipo<span class="dn-m"> Campinas</span></h3>
-									<h4 class="silver lh-title f5 f6-l normal mt3 mt2-ns pt1">2016</h4>
+									<h3 class="f4 mt3 mt4-l lh-copy mr3 mr0-l">DiaTipo<span class="dn-m"> Campinas</span></h3>
+									<h4 class="silver lh-title f5 normal pt2 pt0-ns mt3">2016</h4>
 								</div>
 								<div class="mt2 mt3-m mt4-l">
-									<p class="lh-copy measure-narrow abhaya-b f4">
+									<p class="lh-copy measure-narrow abhaya-b f3">
 										Identidade visual e frontend para o site do DiaTipo Campinas 2016.
 									</p>
 									<a href="http://www.diatipo.com.br/campinas/" class="mid-gray link dib pv1 mt3 mt4-l link f5 b bb b--accent accent-hover">Veja online <span class="f7 normal">&#10140;</span></a>
@@ -208,7 +188,7 @@
 						</div>
 					</section>
 
-					<form class="ml7 mt7 mw7" action="https://tinyletter.com/mtzzine" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/mtzzine', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+					<!-- <form class="ml7 mt7 mw7" action="https://tinyletter.com/mtzzine" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/mtzzine', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 						<label for="tlemail" class="b f4 lh-title">Também sou um designer que escreve&trade;</label>
 						<p class="mw6 lh-copy mt3 abhaya-b f4">Não escrevo tanto sobre design, mas exploro áreas próximas como tecnologia e sociedade, por exemplo. Você pode ler o que já escrevi <a href="./escrita" class="mid-gray link bb b--accent accent-hover">aqui</a> e também receber os próximos textos por email.</p>
 						<div class="flex-l mt3">
@@ -216,11 +196,14 @@
 							<input type="hidden" value="1" name="embed"/>
 							<input type="submit" value="Quero me inscrever" class="pointer mt3 ml3 work-sans white b b--accent pa3 br1 bg-accent" />
 						</div>
-					</form>
+					</form> -->
 
-					<footer class="pt5 mt6">
-						<ul class="list pl0 flex items-end items-start-ns flex-row-reverse flex-row-ns justify-between justify-start-ns silver f5 f6-l lh-copy lh-solid-l">
-							<li class="pb2 pb0-ns w5-ns mw4-m">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></li>
+					<footer class="pv5 pb0-ns mt6 relative">
+						<ul class="list pl0 flex items-start justify-between justify-start-ns silver f5 f6-l lh-copy lh-solid-l">
+							<li class="absolute relative-ns bottom-0 pb0 w5-ns mw4-m">
+								<a href="mailto:andre@mtzz.co" class="link bb b--accent mid-gray accent-hover">andre@mtzz.co</a>
+								<!-- &copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script> -->
+							</li>
 							<div class="tr-l">
 								<li class="pv1-ns db di-ns">
 									Site construído com
@@ -230,16 +213,18 @@
 								</li>
 								<li class="pv2 pv1-ns db di-ns"><a href="https://fonts.google.com/specimen/Work+Sans" target="_blank" class="link bb b--accent mid-gray accent-hover">Work Sans</a> + 
 								</li>
-								<li class="pv2 pv1-ns db di-ns"><a href="https://https://fonts.google.com/specimen/Abhaya+Libre" target="_blank" class="link bb b--accent mid-gray accent-hover">Abhaya Libre</a>
+								<li class="pv2 pv1-ns db di-ns"><a href="https://fonts.google.com/specimen/Abhaya+Libre" target="_blank" class="link bb b--accent mid-gray accent-hover">Abhaya Libre</a>
 								</li>
 							</div>
 						</ul>
+						<span class="absolute bottom-0 normal right-0 silver f5 f6-l lh-title">&copy; <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></span>
 					</footer>
 
-					<a href="javascript:;" onclick="topFunction()" class="absolute accent-hover bottom-1 bottom-0-m db link mb3-m mb4 mr3-m mr4 normal pa3 right-1 right-0-m rotate-270 silver">&#10140;</a>
+					<!-- <a href="javascript:;" onclick="topFunction()" class="absolute accent-hover bottom-1 bottom-0-m db link mb3-m mb4 mr3-m mr4 normal pa3 right-1 right-0-m rotate-270 silver">&#10140;</a> -->
+
 
 				</main>
 
-				<script type=text/javascript src="js/scrollTop.js"></script>
+				<!-- <script type=text/javascript src="js/scrollTop.js"></script> -->
 			</body>
 			</html>
