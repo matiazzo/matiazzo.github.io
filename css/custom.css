@@ -10,10 +10,12 @@
 	}
 
 	::selection {
-		background: rgba(255, 151, 120, 0.4);
+		background: #ffd3c7;
+		color: #4c4646;
 	}
 	::-moz-selection {
-		background: rgba(255, 151, 120, 0.4);
+		background: #ffd3c7;
+		color: #4c4646;
 	}
 
 	body {
