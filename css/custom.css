@@ -8,6 +8,16 @@
 		font-feature-settings:"kern" 1;
 		font-kerning:normal
 	}
+
+	::selection {
+		background: rgba(255, 151, 120, 0.4);
+		/*color: rgb(255, 255, 255);*/
+	}
+	::-moz-selection {
+		background: rgba(255, 151, 120, 0.4);
+		/*color: rgb(255, 255, 255);*/
+	}
+
 	body {
 		background: #FFFCFB;
 		background-image: url(../../../img/bg.png);
