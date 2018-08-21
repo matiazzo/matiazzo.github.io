@@ -5,42 +5,62 @@ import Person from './Person/Person';
 // extends = App é Component + o que eu escrever aqui dentro
 class App extends Component {
 	// state só funciona se algo tem "extends Component"
-	state  = {
+	state = {
 		// array
 		persons: [
-		{ nome: 'Andre', idade: 27},
-		{ nome: 'Giove', idade: 26}
+			{ nome: 'Andre', idade: 27 },
+			{ nome: 'Giove', idade: 26 }
 		]
 	}
 
 	switchNameHandler = (newName) => {
-	// console.log('Foi clicado');
-	// funciona com state, que só funciona com 'extends Component'
-	this.setState({
-		persons: [
-		{ nome: newName, idade: 27},
-		{ nome: 'Giove', idade: 21}
-		]
-	});
-}
+		// console.log('Foi clicado');
+		// funciona com state, que só funciona com 'extends Component'
+		this.setState({
+			persons: [
+				{ nome: newName, idade: 27 },
+				{ nome: 'Giove', idade: 21 }
+			]
+		});
+	}
+
+	nameChangedHandler = (event) => {
+		this.setState({
+			persons: [
+				{ nome: 'Andre', idade: 27 },
+				{ nome: event.target.value, idade: 21 }
+			]
+		});
+	}
 
 	// render() renderiza o app
 	// "this" em Person se refere a "App"
 	render() {
+		const style = {
+			backgroundColor: 'white',
+			font: 'inherit',
+			border: '1px solid blue',
+			padding: '8px',
+			cursor: 'pointer'
+		};
+
 		return (
 			<div className="App">
-			<h1>Oie</h1>
-			<p>Funfa</p>
-			<button onClick={() => this.switchNameHandler('Deds')} >Trocar nome</button>
-			<Person 
-			name={this.state.persons[0].nome}
-			age={this.state.persons[0].idade}/>
-			<Person
-			name={this.state.persons[1].nome}
-			age={this.state.persons[1].idade}
-			click={this.switchNameHandler.bind(this, 'Dedeco')}>e gosto de cavalos</Person>
+				<h1>Oie</h1>
+				<p>Funfa</p>
+				<button
+				style={style}
+				onClick={() => this.switchNameHandler('Deds')} >Trocar nome</button>
+				<Person
+					name={this.state.persons[0].nome}
+					age={this.state.persons[0].idade} />
+				<Person
+					name={this.state.persons[1].nome}
+					age={this.state.persons[1].idade}
+					click={this.switchNameHandler.bind(this, 'Dedeco')}
+					changed={this.nameChangedHandler}>e gosto de cavalos</Person>
 			</div>
-			);
+		);
 		// return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Funciona?'));
 	}
 
