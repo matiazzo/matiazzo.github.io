@@ -1,0 +1,73 @@
+/*COLORS*/
+.red {color: #f38580;}
+.orange {color: #faae5f;}
+
+/*FONTS*/
+.bitter {
+	font-family: 'Bitter', serif;
+	font-weight: 400;
+}
+
+.firaRegular {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+}
+
+.firaLight {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 300;
+}
+
+.brand-border {
+	border-top-color: #f38580;
+	border-right-color: #f79b71;
+	border-bottom-color: #f8a466;
+	border-left-color: #faae5f;
+}
+
+.gradient-title {
+	color: #faae5f;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4867f+0,f9a566+50,fbbc61+100 */
+	background: #f4867f; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f4867f 0%, #f9a566 50%, #fbbc61 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #f4867f 0%,#f9a566 50%,#fbbc61 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #f4867f 0%,#f9a566 50%,#fbbc61 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4867f', endColorstr='#fbbc61',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4867f+0,f9a566+50,fbbc61+100 */
+	background: #f4867f; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f4867f 0%, #f9a566 50%, #fbbc61 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #f4867f 0%,#f9a566 50%,#fbbc61 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #f4867f 0%,#f9a566 50%,#fbbc61 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4867f', endColorstr='#fbbc61',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.overlay, #googleMap {height: 300px; border: none;}
+
+@media screen and (min-width:45em){
+	.bitter-ns {
+		font-family: 'Bitter', serif;
+		font-weight: 400;
+	}
+
+	.firaRegular-ns {
+		font-family: 'Fira Sans', sans-serif;
+		font-weight: 400;
+	}
+
+	.firaLight-ns {
+		font-family: 'Fira Sans', sans-serif;
+		font-weight: 300;
+	}
+
+	.black-ns {color: rgba(0,0,0,.8);}
+
+	.sticky-ns {
+		position: -webkit-sticky;
+  		position: sticky;
+	}
+}

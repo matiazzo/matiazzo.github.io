@@ -1,0 +1,1164 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	font-family: "karmina-sans", Arial, sans-serif;
+	font-weight: 700;
+	background-color: #F15B61;
+	color: #343537;
+}
+
+.soon {
+	text-align: center;
+	border: 2px solid rgba(0,0,0,0.3);
+	padding: 10% 0 14%;
+	margin-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "abril-display", Georgia, sans-serif;
+	font-weight: bolder;
+	color: #343537;
+}
+
+h2 {
+	color: #EBE9E9;
+	font-size: 8em;
+	line-height: 0.9;
+	margin: 30px 0 0;
+}
+
+h3 {
+	font-family: "karmina-sans", Arial, sans-serif;
+	font-weight: 800;
+	font-size: 3.8em;
+	margin: 15px 0 0;
+}
+
+h4 {
+	color: #EBE9E9;
+	font-size: 4em;
+	margin: 0;
+}
+
+h6 {
+	/*color: #EBE9E9;*/
+	font-size: 24px;
+	margin: 0 0 15px;
+}
+
+p {
+	font-size: 17px;
+	font-weight: 400;
+	color: #EBE9E9;
+	margin: 30px 0 0;
+}
+
+p > a,
+.contact a {
+	float: none !important;
+	color: #fff;
+	/*background: rgb(255, 126, 132);*/
+	background: rgba(0,0,0,0.18);
+	background-position: center -10px;
+}
+
+p > a:hover,
+p > a:focus,
+.contact a:hover,
+.contact a:focus {
+	color: #fff;
+	text-decoration: none;
+	background: rgba(255,255,255,0.15);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+iframe {
+	width: 100%;
+	height: 70vh;
+	border: none;
+}
+
+span.time {
+	font-family: "abril-display", Georgia, sans-serif;
+	font-weight: 800;
+	font-size: 4em;
+	font-style: italic;
+	line-height: 0.9;
+	/*color: #EBE9E9;*/
+	color: rgba(0,0,0,0.3);
+}
+
+* {
+	-webkit-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms;
+}
+
+section {
+	padding-top: 30px;
+	margin-top: 90px;
+	float: left;
+	width: 100%;
+}
+
+#header {
+	padding: 0;
+	margin: 0;
+	min-height: 500px;
+	background-image: url('../img/header_hand.png');
+	background-size: auto 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.header__container {
+	position: absolute;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 50%;
+	right: 0;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.header__logo {
+	text-align: right;
+	float: left;
+	width: 48%;
+	padding: 0 15px;
+}
+
+.header__logo img {
+	max-width: 215px;
+	display: inline;
+}
+
+.header__infos {
+	float: left;
+	width: 52%;
+	padding: 0 15px;
+	position: relative;
+}
+
+.header__infos h1 {
+	font-size: 5.4rem;
+	font-style: italic;
+	line-height: 1;
+	max-width: 400px;
+	margin: 17.5% 0 0;
+}
+
+.header__infos nav {
+	margin-top: 30px;
+}
+
+.header__infos ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.header__infos li {
+	margin-top: 10px;
+}
+
+.header__infos a {
+	color: #fff;
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.3rem;
+}
+
+.header__infos a.cta {
+	background-color: #fff;
+	display: inline-block;
+	border: none;
+}
+
+.ss-icon {
+	position: absolute;
+	right: 30px;
+	bottom: 0;
+	margin-bottom: 0;
+}
+
+.ss-icon li {
+	float: left;
+	margin-left: 15px;
+}
+
+.ss-icon li a {
+	font-size: 22px;
+	color: rgba(0,0,0,0.3);
+}
+
+.ss-icon li a:hover {
+	color: rgba(0,0,0,0.5);
+}
+
+.section-title {
+	font-size: 18rem;
+	line-height: 1;
+	margin: 0;
+}
+
+#palestras,
+#mesa-redonda {
+	font-size: 10px;
+}
+
+.palestras__container * {
+	float: left;
+}
+
+.palestrante {
+	margin-top: 240px;
+	position: relative;
+}
+
+.palestrante:first-of-type,
+.participante:first-of-type,
+.workshop:first-of-type {
+	margin-top: 90px;
+}
+
+.palestrante__infos {
+	width: 35%;
+	margin-left: -60px;
+}
+
+.palestrante__infos p {
+	width: 100%;
+}
+
+.palestrante__img {
+	width: 65%;
+}
+
+a.cta {
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	margin-left: -8px;
+	padding: 18px 18px 15px;
+	color: #000;
+	border: 2px solid;
+	margin-top: 30px;
+	display: inline-block;
+	-webkit-box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+	box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+}
+
+a.cta:hover,
+a.cta.active {
+	color: #000;
+	text-decoration: none;
+	-webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 0 0 0px 0px rgba(0,0,0,1);
+	box-shadow: 0 0 0px 0px rgba(0,0,0,1);
+	-webkit-transform: translate(8px,8px);
+	-ms-transform: translate(8px,8px);
+	-o-transform: translate(8px,8px);
+	transform: translate(8px,8px);
+	-webkit-transition: all 300ms;
+	-o-transition: all 300ms;
+	transition: all 300ms;
+	cursor: pointer;
+}
+
+a.cta:focus {
+	color: #000;
+	text-decoration: none;
+}
+
+.palestrante .cta {
+	border: none;
+	background-color: #fff;
+}
+
+/*Intercala as fotos dos palestrantes*/
+.palestrante:nth-child(even) .palestrante__infos {
+	margin-left: 60px;
+	position: relative;
+	z-index: 1;
+}
+
+.palestrante:nth-child(even) .palestrante__img {
+	position: absolute;
+	z-index: 0;
+	margin-left: 35%;
+}
+
+.mesa-redonda__header {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#mesa-redonda .section-title {
+	width: 50%;
+	font-size: 10rem;
+	line-height: 0.9;
+	color: rgba(0,0,0,0.3);
+	text-align: right;
+	padding: 0 15px;
+	float: left;
+}
+
+.mesa-redonda__infos {
+	width: 50%;
+	max-width: 500px;
+	position: absolute;
+	margin-left: 50%;
+	padding: 0 15px;
+	bottom: 11px;
+}
+
+.mesa-redonda__infos span {
+	display: block;
+	color: #EBE9E9;
+}
+
+.mesa-redonda__participantes {
+	float: left;
+	width: 70%;
+	margin-left: 15%;
+	padding: 0 15px;
+}
+
+.participante {
+	width: 100%;
+	float: left;
+	margin-top: 60px;
+	position: relative;
+}
+
+.participante__img {
+	width: 50%;
+	float: left;
+}
+
+.participante--02 .participante__img {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.participante--03 .participante__img {
+	margin-left: 50%;
+}
+
+.participante__infos {
+	width: 50%;
+	position: absolute;
+	float: left;
+	right: 30px;
+	top: 50%;
+	-webkit-transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	-o-transform: translateY(50%);
+	transform: translateY(-50%);
+}
+
+.participante__infos a.cta {
+	border: none;
+	background-color: #fff;
+}
+
+.participante--02 .participante__infos {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+.participante--02 .participante__infos h4 {
+	color: rgba(0,0,0,0.3);
+	text-align: center;
+	font-size: 8rem;
+}
+
+.participante--03 .participante__infos {
+	position: absolute;
+	left: 60px;
+}
+
+.participante__infos span {
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	color: #EBE9E9;
+}
+
+.participante__infos p {
+	margin-top: 15px;
+}
+
+.workshops__container {
+	padding: 0;
+}
+
+.workshop {
+	margin-top: 120px;
+	float: left;
+}
+
+.workshop__img {
+	width: 60%;
+	float: left;
+	padding: 0 15px;
+}
+
+.workshop__infos {
+	float: left;
+	width: 40%;
+	font-size: 10px
+}
+
+.workshop__infos h2,
+.workshop__infos h3 {
+	margin-left: -90px;
+	padding: 0 15px;
+}
+
+.workshop__infos h4 {
+	font-size: 3em;
+	line-height: 1.2;
+	font-style: italic;
+	width: 50%;
+	float: left;
+	padding: 0 15px;
+	margin: 30px 0 0;
+}
+
+.workshop__infos h4.spots-and-price {
+	color: #EBE9E9;
+}
+
+.workshop__infos h4.date-and-time {
+	color: rgba(0,0,0,0.4);
+}
+
+.workshop a.cta {
+	background-color: #fff;
+	float: left;
+	border: none;
+	margin-left: 15px;
+	margin-top: 30px;
+}
+
+.workshop__program {
+	float: left;
+	margin-top: 15px;
+}
+
+.workshop__program ul {
+	list-style-type: none;
+	padding: 0 15px;
+	margin: 30px 0 0;
+}
+
+.workshop__program ul li {
+	font-size: 1.7rem;
+	font-weight: 400;
+	color: #EBE9E9;
+}
+
+.workshop__program ul li:first-child {
+	color: #343537;
+	font-size: 1.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+}
+
+.workshop:nth-child(even) .workshop__img {
+	position: absolute;
+	margin-left: 40%;
+	z-index: -1;
+}
+
+.workshop:nth-child(even) .workshop__infos h2,
+.workshop:nth-child(even) .workshop__infos h3 {
+	margin-left: 0;
+}
+
+#inscricoes {
+	font-size: 10px;
+}
+
+#inscricoes .container-fluid {
+	max-width: 1140px;
+}
+
+.lotes__container {
+	width: 100%;
+	float: left;
+	margin-top: 60px;
+}
+
+.lote {
+	float: left;
+	width: 33.333333333%;
+	padding: 0 15px;
+}
+
+.lote--inactive a.cta {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: rgba(0,0,0,0.3);
+}
+
+.lote--inactive a.cta:hover,
+.lote--inactive a.cta:focus,
+.lote--inactive a.cta.active {
+	color: rgba(0,0,0,0.3);
+	-webkit-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+	cursor: default;
+}
+
+.lote__title {
+	float: left;
+}
+
+.lote__title h4 {
+	font-size: 6em;
+	float: left;
+}
+
+.lote__title span {
+	font-size: 2.5em;
+	line-height: 1;
+	font-family: "abril-display", Georgia, sans-serif;
+	font-style: italic;
+	display: block;
+}
+
+.lote__prices {
+	width: 100%;
+	float: left;
+	border: 2px solid rgba(0,0,0,0.3);
+	padding: 30px 60px;
+	position: relative;
+	margin-top: 15px;
+}
+
+.prices__category {
+	width: 100%;
+	float: left;
+	text-align: center;
+	border-bottom: 2px solid rgba(0,0,0,0.3);
+	padding: 30px 0;
+}
+
+.prices__category:last-child {
+	border-bottom: none;
+}
+
+.prices__category h5 {
+	font-family: "karmina-sans", Arial, sans-serif;
+	color: #343537;
+	font-size: 1.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	margin: 0;
+}
+
+.price {
+	display: block;
+	font-family: "abril-display", Georgia, sans-serif;
+	font-weight: bolder;
+	font-style: italic;
+	color: #EBE9E9;
+	font-size: 3em;
+}
+
+.price span {
+	font-size: 2em;
+	vertical-align: -webkit-baseline-middle;
+}
+
+.prices__category .cta {
+	display: block;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.local__container {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+#googleMap {
+	float: left;
+	width: 100%;
+	margin-top: 30px;
+	height: 70vh;
+}
+
+.overlay {
+	background: transparent;
+	position: absolute;
+	width: 100%;
+	height: 70vh;
+	top: 30px;
+}
+
+#contact-and-thanks {
+	float: left;
+	width: 100%;
+	padding: 0 60px;
+	margin-top: 0;
+}
+
+#contact-and-thanks img {
+	height: 60px;
+	float: left;
+	padding: 0 15px;
+	opacity: 0.4;
+}
+
+.contact {
+	text-align: center;
+	padding: 60px 0;
+	border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.contact a {
+	font-size: 17px;
+}
+
+.thanks {
+	padding: 60px 0;
+	float: left;
+	width: 100%;
+	border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.thanks__support,
+.thanks__patreons {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+.thanks__support {
+	border-right: 2px solid rgba(0,0,0,0.15);
+}
+
+.support__container,
+.patreons__container {
+	display: inline-block;
+}
+
+footer {
+	float: left;
+	width: 100%;
+	padding: 30px 0;
+	text-align: center;
+}
+
+@media (min-width: 1200px) {
+
+	.header__infos {
+		width: auto;
+	}
+
+}
+
+@media (max-width: 1199px) {
+
+	#inscricoes .container-fluid {
+		padding: 0 30px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	.section-title {
+		font-size: 15vw;
+	}
+
+	#palestras,
+	#mesa-redonda,
+	#workshops {
+		font-size: 8px;
+	}
+
+	.palestrante__img {
+		width: 60%;
+	}
+
+	.palestrante:nth-child(even) .palestrante__img {
+		/*margin-left: calc(40% + 45px);*/
+		margin-left: 40%;
+	}
+
+	.palestrante__infos {
+		width: 40%;
+		margin-left: -45px;
+	}
+
+	.palestrante:nth-child(even) .palestrante__infos {
+		margin-left: 45px;
+	}
+
+	.palestrante__infos p {
+		/*width: calc(100% + 45px);*/
+		width: 100%;
+	}
+
+	.palestra > span {
+		padding-left: 0;
+		width: auto;
+	}
+
+	#mesa-redonda .section-title {
+		font-size: 8rem;
+	}
+
+	.mesa-redonda__participantes {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.workshop__infos {
+		font-size: 9px;
+	}
+
+	.workshop__img {
+		width: 50%;
+	}
+
+	.workshop:nth-child(even) .workshop__img {
+		margin-left: 60%;
+	}
+
+	.workshop__infos {
+		width: 50%;
+	}
+
+	.lote__prices {
+		padding: 0 30px;
+	}
+
+	.overlay,
+	#googleMap {
+		width: 100%;
+		margin-left: 0
+	}
+
+}
+
+@media (max-width: 767px) {
+
+	h4 {
+		font-size: 6em;
+	}
+
+	.header__container {
+		max-width: 400px;
+	}
+
+	.header__logo {
+		width: 100%;
+		text-align: left;
+		padding: 0 30px;
+	}
+
+	.header__logo img {
+		max-width: 120px;
+	}
+
+	.header__infos {
+		float: right;
+		width: auto;
+		padding: 0 30px;
+	}
+
+	.header__infos h1 {
+		margin-top: 30px;
+		font-size: 3.5rem;
+		max-width: 260px;
+	}
+
+	.ss-icon {
+		position: relative;
+		right: 0;
+	}
+
+	.ss-icon li {
+		margin-left: 0;
+		margin-right: 15px;
+		margin-top: 30px;
+	}
+
+	.palestrante {
+		margin-top: 180px;
+	}
+
+	.palestrante:first-of-type,
+	.participante:first-of-type,
+	.workshop:first-of-type {
+		margin-top: 60px;
+	}
+
+	.palestrante__img {
+		width: 50%;
+	}
+
+	.palestrante:nth-child(even) .palestrante__img {
+		margin-left: 50%;
+	}
+
+	.palestrante__infos {
+		width: 50%;
+	}
+
+	#mesa-redonda .section-title {
+		width: 70%;
+		font-size: 15vw;
+	}
+
+	.mesa-redonda__infos {
+		width: 80%;
+		margin-top: 30px;
+		margin-left: 20%;
+		position: relative;
+		float: left;
+		max-width: none;
+	}
+
+	.participante__img {
+		width: 50%;
+	}
+
+	.participante__infos {
+		margin-left: -30px;
+		-webkit-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+		width: 50%;
+		top: 0;
+		right: 0;
+		position: relative;
+	}
+
+	.workshop__img {
+		width: 40%;
+	}
+
+	.workshop__infos {
+		font-size: 7.5px;
+		width: 60%;
+	}
+
+	.workshop__infos h2,
+	.workshop__infos h3 {
+		margin-left: -60px;
+	}
+
+	#inscricoes {
+		font-size: 8px;
+	}
+
+	#contact-and-thanks img {
+		float: none;
+		margin-top: 15px;
+	}
+
+	.thanks__support,
+	.thanks__patreons {
+		width: 100%;
+	}
+
+	.thanks__support {
+		border-right: none;
+		border-bottom: 2px solid rgba(0,0,0,0.15);
+		padding-bottom: 60px;
+	}
+
+	.thanks__patreons {
+		padding-top: 60px;
+	}
+
+}
+
+@media (max-width: 660px) {
+
+	.lotes__container {
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	.lote__title h4 span {
+		display: block;
+	}
+
+	.lote {
+		width: 100%;
+		margin-top: 60px;
+		padding: 0;
+	}
+
+	.lote:first-of-type {
+		margin-top: 0;
+	}
+
+	.lote__prices {
+		padding: 0 30px;
+	}
+
+	.prices__category {
+		width: 100%;
+		border-right: none;
+		border-bottom: 2px solid rgba(0,0,0,0.3);
+		float: none;
+		padding: 30px 0;
+	}
+
+	.prices__category:last-child {
+		border-bottom: none;
+	}
+
+}
+
+/*@media (max-height: 540px) and (min-width: 550px) {
+
+	.header__container {
+		position: relative;
+		max-width: none;
+		top: 0;
+	}
+
+	.header__logo {
+		width: 40%;
+		padding: 15px 15px 0;
+	}
+
+	.header__infos {
+		float: left;
+		padding: 0 15px;
+	}
+
+	.header__infos h1 {
+		margin-top: 15px;
+	}
+
+	.header__infos nav {
+		margin-top: 15px;
+	}
+
+	.header__infos a.cta {
+		margin-top: 15px;
+	}
+
+	.ss-icon {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}*/
+
+@media (max-width: 549px) {
+
+	.header__infos a.cta {
+		width: 100%;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	h2 {
+		margin-top: 15px;
+	}
+
+	h3 {
+		margin-top: 5px;
+	}
+
+	p {
+		margin-top: 15px;
+	}
+
+	section {
+		margin-top: 60px;
+	}
+
+	span.time {
+		font-size: 4.5em;
+	}
+
+	#palestras, #mesa-redonda, #workshops {font-size: 6px;}
+
+	.palestrante:first-of-type,
+	.participante:first-of-type,
+	.workshop:first-of-type {
+		margin-top: 45px;
+	}
+
+	.header__logo img {
+		max-width: 100px;
+	}
+
+	.header__infos {
+		float: left;
+		width: 100%;
+	}
+
+	.header__infos h1 {
+		margin-top: 15px;
+		font-size: 3rem;
+	}
+
+	.header__infos li {
+		margin-top: 15px;
+	}
+
+	.palestrante {
+		margin-top: 120px;
+	}
+
+	.palestras__container * {
+		clear: both;
+	}
+
+	.palestrante__img {
+		width: 100%;
+	}
+
+	.palestrante:nth-child(even) .palestrante__img {
+		margin-left: 0;
+		position: relative;
+	}
+
+	.palestrante__infos {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.palestrante:nth-child(even) .palestrante__infos {
+		margin-left: 0;
+	}
+
+	.palestrante__infos p {
+		width: 100%;
+	}
+
+	#mesa-redonda {
+		margin-top: 30px;
+	}
+
+	.participante {
+		width: 100%;
+	}
+
+	.participante__infos {
+		margin-left: 0;
+		margin-top: 15px;
+		width: 100%;
+	}
+
+	.participante--02 .participante__infos h4 {
+		font-size: 13vw;
+	}
+
+	.participante--03 .participante__infos {
+		margin-left: 0;
+		left: 0;
+		position: relative;
+	}
+
+	.participante__img {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.participante--02 .participante__infos {
+		margin-top: 0;
+	}
+
+	.participante--03 .participante__img {
+		margin-left: 0;
+	}
+
+	#workshops {
+		margin-top: 60px;
+		padding: 0 15px;
+	}
+
+	.workshop {
+		margin-top: 90px;
+	}
+
+	.workshop:first-of-type {
+		margin-top: 30px;
+	}
+
+	.workshop__img {
+		width: 100%;
+	}
+
+	.workshop:nth-child(even) .workshop__img {
+		margin-left: 0;
+		width: 100%;
+		position: relative;
+	}
+
+	.workshop__infos {
+		font-size: 6px;
+		width: 100%;
+	}
+
+	.workshop:nth-child(even) .workshop__infos {
+		position: relative;
+	}
+
+	.workshop__infos h2,
+	.workshop__infos h3 {
+		margin-left: 0;
+	}
+
+	.workshop:nth-child(even) .workshop__infos h2,
+	.workshop:nth-child(even) .workshop__infos h3 {
+		min-width: initial;
+	}
+
+	.workshop__infos h4 {
+		font-size: 4em;
+		width: auto;
+	}
+
+	.lotes__container {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 30px;
+	}
+
+}
