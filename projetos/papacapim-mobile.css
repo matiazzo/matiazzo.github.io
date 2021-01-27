@@ -1,0 +1,176 @@
+@media (max-width: 380px) {
+
+	* {
+		-webkit-box-sizing: border-box;
+	  	-moz-box-sizing: border-box;
+	  	box-sizing: border-box;
+	}
+
+	html {
+		overflow-x: hidden;
+	}
+
+	body {
+	    padding: 0 12px;
+	    overflow-x: hidden;
+	}
+
+	figure {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.menu-main a {
+		margin-bottom: 12px;
+		font-size: 0.875rem;
+		font-weight: 400;
+	}
+
+	#header img {
+	    display: block;
+	    width: 100%;
+	    height: auto;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.blog-name a {
+	    width: 100%;
+	}
+
+	.center-column {
+	    width: 100%;
+	}
+
+	.post-info img,
+	.post-content img {
+		width: 100% !important;
+		height: auto;
+	}
+
+	#esquerda, .center-column-sidebar {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		margin-top: 30px;
+		padding-left: 0;
+		border-left: none;
+	}
+
+	.post-info img {
+		display: block;
+	}
+
+	.post-content {
+		width: 100%;
+	}
+
+	#comment-wrapper {
+		margin-top: 32px;
+	}
+
+	#comments {
+	    padding: 16px 0 24px !important;
+	}
+
+	.comment-number {
+	    width: 100% !important;
+	}
+
+	.comment-message {
+	    position: relative !important;
+	    left: 0 !important;
+	}
+
+	ol.commentlist li,
+	ol.commentlist .children li {
+		padding-left: 64px;
+	}
+
+	ol.commentlist li.comment div.reply,
+	ol.commentlist li.pingback div.reply {
+		top: initial;
+		bottom: 24px;
+	}
+
+	ol.commentlist li.comment div.vcard img.avatar {
+		left: -64px;
+	}
+
+	.comment-body {
+		padding-bottom: 32px;
+		position: relative;
+	}
+
+	.embed-youtube iframe {
+		width: 100%;
+		height: auto;
+	}
+
+	#subscribe-email input,
+	#searchform input {
+		height: 44px;
+		padding: 0 8px;
+	    -webkit-box-sizing: border-box;
+	 	-moz-box-sizing: border-box;
+	  	box-sizing: border-box;
+	}
+
+	#subscribe-email input {
+		width: 100%;
+	}
+
+	#subscribe-submit button {
+		height: 44px;
+		padding: 0 16px;
+	}
+
+	#searchform input#s {
+		width: 60%;
+	}
+
+	#searchform input#searchsubmit {
+		padding: 0 16px;
+	}
+
+	.ultimos_posts_widget ul {
+		margin: 0 -8px;
+	}
+
+	.ultimos_posts_widget li {
+	    width: 33.333%;
+	    height: auto;
+	    margin: 0 0 8px 0;
+	    padding: 0 4px;
+	    -webkit-box-sizing: border-box;
+	 	-moz-box-sizing: border-box;
+	  	box-sizing: border-box;
+	}
+
+	.ultimos_posts_widget li img {
+	    width: 100%;
+	    height: auto;
+	    display: block;
+	    margin: 0;
+	}
+
+	#footer .credits,
+	#footer .bottom-link {
+		padding-top: 16px;
+	}
+
+	.cat-item {
+		margin-bottom: 8px;
+	}
+
+	.receitas a {
+		display: inline-block;
+		margin-top: 16px
+	}
+
+	.receitas h3 {
+		margin-top: 40px;
+    	font-weight: 500;
+	}
+
+}
