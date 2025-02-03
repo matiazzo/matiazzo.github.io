@@ -20,7 +20,7 @@
 
 	body {
 		background: #FFFCFB;
-		background-image: url(../../../img/bg.png);
+/*		background-image: url(../img/bg.png);*/
 		background-attachment: fixed;
 		font-family: 'Work Sans', sans-serif;
 	}
