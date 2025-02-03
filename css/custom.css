@@ -31,6 +31,8 @@
 		background: #FFFCFB;
 	}
 
+	a:hover, a:active {color:#ff9778;}
+
 	.accent {color: #ff9778;}
 	.bg-accent {background-color: #ff9778}
 	.accent-hover:hover {color: #ff9778;}
