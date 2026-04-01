@@ -31,6 +31,7 @@
 		background: #FFFCFB;
 	}
 
+	a {text-decoration-color: #ff9778;}
 	a:hover, a:active {color:#ff9778;}
 
 	.accent {color: #ff9778;}
