@@ -1,0 +1,295 @@
+<!--
+  COMPONENTES REUTILIZÁVEIS - ZIPPI
+  Use estes snippets em suas páginas
+-->
+
+<!-- HEADER COM NOME E ÍCONES -->
+<template id="header-template">
+	<header class="header">
+		<h1 class="header-title">Murilo</h1>
+		<div class="header-actions">
+			<button class="btn btn-icon" aria-label="Chat">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+				</svg>
+			</button>
+			<button class="btn btn-icon" aria-label="Configurações">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="1"/>
+					<circle cx="19" cy="12" r="1"/>
+					<circle cx="5" cy="12" r="1"/>
+				</svg>
+			</button>
+		</div>
+	</header>
+</template>
+
+<!-- CARD DE RESUMO -->
+<template id="summary-card-template">
+	<div class="card">
+		<p class="caption">16 de Julho</p>
+		<h3>Resumo de vendas</h3>
+		<div class="card-row">
+			<div>
+				<p class="label">Lucro bruto</p>
+				<p class="amount">R$ 620,92</p>
+			</div>
+			<div>
+				<p class="label">Lucro líquido</p>
+				<p class="amount">R$ 560,00</p>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!-- CARD DE INFORMAÇÕES -->
+<template id="info-card-template">
+	<div class="card">
+		<div class="info-row">
+			<div>
+				<p class="label">Seu cliente paga</p>
+				<p class="amount">R$ 3.160</p>
+				<p class="small-text">12x de R$ 316</p>
+			</div>
+			<div>
+				<p class="label">Você recebe</p>
+				<p class="amount" style="color: var(--orange);">R$ 2.790</p>
+				<p class="small-text">Na hora</p>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!-- CARD COM LISTA DE VENDAS -->
+<template id="sales-list-template">
+	<div class="card">
+		<div class="sales-item">
+			<div class="sales-icon">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+					<rect x="3" y="3" width="18" height="18" rx="2"/>
+				</svg>
+			</div>
+			<div class="sales-info">
+				<p class="amount">R$ 120,00</p>
+				<p class="time">18h04</p>
+			</div>
+			<span class="badge badge-success">Aprovada</span>
+		</div>
+	</div>
+</template>
+
+<!-- BOTTOM NAVIGATION -->
+<template id="bottom-nav-template">
+	<nav class="bottom-nav">
+		<button class="nav-item">
+			<span class="nav-icon">🏠</span>
+			<span class="nav-label">Início</span>
+		</button>
+		<button class="nav-item">
+			<span class="nav-icon">♻️</span>
+			<span class="nav-label">Giro</span>
+		</button>
+		<button class="nav-item active">
+			<span class="nav-icon">💰</span>
+			<span class="nav-label">Vendas</span>
+		</button>
+	</nav>
+</template>
+
+<!-- STEPPER DE PARCELAS -->
+<template id="stepper-template">
+	<div class="stepper-container">
+		<h3>Parcelas</h3>
+		<div class="stepper">
+			<button class="stepper-btn">−</button>
+			<span class="stepper-value">12</span>
+			<button class="stepper-btn">+</button>
+		</div>
+		<p class="tax-info">Taxa: 3,12%</p>
+	</div>
+</template>
+
+<!-- INPUT COM PREFIX (PIX) -->
+<template id="pix-input-template">
+	<div>
+		<label for="pix-key">Coloque abaixo a chave Pix da sua conta</label>
+		<p class="help-text">Esta conta receberá os valores das suas vendas</p>
+		<div class="input-group">
+			<span class="input-prefix">|</span>
+			<input type="text" id="pix-key" class="input" placeholder="Chave Pix">
+		</div>
+		<div class="input-actions">
+			<button class="btn btn-secondary">Colar</button>
+		</div>
+		<div class="card alert-card">
+			<p>A conta vinculada precisa ser da sua titularidade</p>
+			<button class="btn-help">?</button>
+		</div>
+	</div>
+</template>
+
+<!-- HISTÓRICO COM PERÍODO -->
+<template id="history-header-template">
+	<div class="history-header">
+		<h2>Histórico</h2>
+		<div class="period-selector">
+			<button class="period-btn">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+					<path d="M15 19l-7-7 7-7"/>
+				</svg>
+			</button>
+			<span class="period-text">Hoje</span>
+		</div>
+	</div>
+</template>
+
+<style>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-lg);
+		background: var(--white);
+		border-radius: var(--radius-lg);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.header-title {
+		font-size: var(--font-size-h2);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.header-actions {
+		display: flex;
+		gap: var(--spacing-md);
+	}
+
+	.caption {
+		font-size: var(--font-size-caption);
+		color: var(--gray);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.time {
+		font-size: var(--font-size-caption);
+		color: var(--gray);
+	}
+
+	.label {
+		font-size: var(--font-size-small);
+		color: var(--gray);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.amount {
+		font-size: var(--font-size-h2);
+		font-weight: var(--font-weight-bold);
+		color: var(--dark);
+	}
+
+	.small-text {
+		font-size: var(--font-size-small);
+		color: var(--gray);
+		margin-top: var(--spacing-sm);
+	}
+
+	.help-text {
+		font-size: var(--font-size-small);
+		color: var(--gray);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.sales-item {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-md);
+		padding: var(--spacing-md);
+		background: var(--gray-lighter);
+		border-radius: var(--radius-md);
+	}
+
+	.sales-icon {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--white);
+		border-radius: var(--radius-md);
+		color: var(--gray);
+	}
+
+	.sales-info {
+		flex: 1;
+	}
+
+	.sales-info .amount {
+		margin-bottom: 0;
+	}
+
+	.stepper-container {
+		padding: var(--spacing-lg);
+		background: var(--white);
+		border-radius: var(--radius-lg);
+		text-align: center;
+	}
+
+	.stepper-container h3 {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.stepper-container .stepper {
+		margin: var(--spacing-lg) auto;
+		width: fit-content;
+	}
+
+	.tax-info {
+		font-size: var(--font-size-small);
+		color: var(--gray);
+		margin-top: var(--spacing-md);
+	}
+
+	.input-actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: var(--spacing-md);
+		margin: var(--spacing-md) 0;
+	}
+
+	.input-actions .btn-secondary {
+		width: auto;
+	}
+
+	.history-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-lg);
+		background: var(--white);
+		border-radius: var(--radius-lg);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.period-selector {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-md);
+		background: var(--gray-lighter);
+		padding: var(--spacing-sm) var(--spacing-md);
+		border-radius: var(--radius-md);
+	}
+
+	.period-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: var(--dark);
+		display: flex;
+		align-items: center;
+	}
+
+	.period-text {
+		font-weight: var(--font-weight-medium);
+		color: var(--dark);
+	}
+</style>

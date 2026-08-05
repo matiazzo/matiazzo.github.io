@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zippi - Design System</title>
+	<link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+	<div class="ds-container">
+		<aside class="ds-sidebar">
+			<h2>Design System</h2>
+			<nav class="ds-nav">
+				<a href="#cores" class="ds-nav-link">Cores</a>
+				<a href="#tipografia" class="ds-nav-link">Tipografia</a>
+				<a href="#botoes" class="ds-nav-link">Botões</a>
+				<a href="#inputs" class="ds-nav-link">Inputs</a>
+				<a href="#cards" class="ds-nav-link">Cards</a>
+				<a href="#badges" class="ds-nav-link">Badges</a>
+				<a href="#navigation" class="ds-nav-link">Navigation</a>
+			</nav>
+		</aside>
+
+		<main class="ds-content">
+			<!-- CORES -->
+			<section id="cores" class="ds-section">
+				<h2>Cores</h2>
+
+				<div class="ds-grid">
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #FFA500;"></div>
+						<p class="ds-color-name">Primary Orange</p>
+						<p class="ds-color-value">#FFA500</p>
+						<code>var(--orange)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #FFFCFB;"></div>
+						<p class="ds-color-name">Background</p>
+						<p class="ds-color-value">#FFFCFB</p>
+						<code>var(--bg)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #FFFFFF; border: 1px solid #e0e0e0;"></div>
+						<p class="ds-color-name">White</p>
+						<p class="ds-color-value">#FFFFFF</p>
+						<code>var(--white)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #333333;"></div>
+						<p class="ds-color-name">Dark Text</p>
+						<p class="ds-color-value">#333333</p>
+						<code>var(--dark)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #999999;"></div>
+						<p class="ds-color-name">Gray</p>
+						<p class="ds-color-value">#999999</p>
+						<code>var(--gray)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #7fb800;"></div>
+						<p class="ds-color-name">Success</p>
+						<p class="ds-color-value">#7fb800</p>
+						<code>var(--success)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #E85D5D;"></div>
+						<p class="ds-color-name">Danger</p>
+						<p class="ds-color-value">#E85D5D</p>
+						<code>var(--danger)</code>
+					</div>
+					<div class="ds-color-card">
+						<div class="ds-color-box" style="background-color: #e0e0e0;"></div>
+						<p class="ds-color-name">Border</p>
+						<p class="ds-color-value">#e0e0e0</p>
+						<code>var(--border)</code>
+					</div>
+				</div>
+			</section>
+
+			<!-- TIPOGRAFIA -->
+			<section id="tipografia" class="ds-section">
+				<h2>Tipografia</h2>
+
+				<div class="ds-typo">
+					<div class="ds-typo-item">
+						<h3 style="font-size: 2rem; font-weight: 600;">Heading 1 - 32px</h3>
+						<code>font-size: 2rem; font-weight: 600;</code>
+					</div>
+					<div class="ds-typo-item">
+						<h3 style="font-size: 1.5rem; font-weight: 600;">Heading 2 - 24px</h3>
+						<code>font-size: 1.5rem; font-weight: 600;</code>
+					</div>
+					<div class="ds-typo-item">
+						<p style="font-size: 1.125rem; font-weight: 500;">Heading 3 - 18px Bold</p>
+						<code>font-size: 1.125rem; font-weight: 500;</code>
+					</div>
+					<div class="ds-typo-item">
+						<p style="font-size: 1rem; font-weight: 400;">Body - 16px Regular</p>
+						<code>font-size: 1rem; font-weight: 400;</code>
+					</div>
+					<div class="ds-typo-item">
+						<p style="font-size: 0.875rem; font-weight: 400;">Small - 14px Regular</p>
+						<code>font-size: 0.875rem; font-weight: 400;</code>
+					</div>
+					<div class="ds-typo-item">
+						<p style="font-size: 0.75rem; font-weight: 400; color: #999;">Caption - 12px Gray</p>
+						<code>font-size: 0.75rem; color: var(--gray);</code>
+					</div>
+				</div>
+			</section>
+
+			<!-- BOTÕES -->
+			<section id="botoes" class="ds-section">
+				<h2>Botões</h2>
+
+				<div class="ds-component">
+					<h4>Primary Button</h4>
+					<div class="ds-preview">
+						<button class="btn btn-primary">Fazer nova venda</button>
+						<button class="btn btn-primary" disabled>Desabilitado</button>
+					</div>
+					<pre><code>&lt;button class="btn btn-primary"&gt;Fazer nova venda&lt;/button&gt;</code></pre>
+				</div>
+
+				<div class="ds-component">
+					<h4>Secondary Button</h4>
+					<div class="ds-preview">
+						<button class="btn btn-secondary">Colar</button>
+						<button class="btn btn-secondary" disabled>Desabilitado</button>
+					</div>
+					<pre><code>&lt;button class="btn btn-secondary"&gt;Colar&lt;/button&gt;</code></pre>
+				</div>
+
+				<div class="ds-component">
+					<h4>Icon Button</h4>
+					<div class="ds-preview">
+						<button class="btn btn-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+								<path d="M19 12H5M12 19l-7-7 7-7"/>
+							</svg>
+						</button>
+					</div>
+					<pre><code>&lt;button class="btn btn-icon"&gt;...&lt;/button&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- INPUTS -->
+			<section id="inputs" class="ds-section">
+				<h2>Inputs & Forms</h2>
+
+				<div class="ds-component">
+					<h4>Text Input</h4>
+					<div class="ds-preview">
+						<input type="text" class="input" placeholder="Digite algo...">
+					</div>
+					<pre><code>&lt;input type="text" class="input" placeholder="..."&gt;</code></pre>
+				</div>
+
+				<div class="ds-component">
+					<h4>Input com Prefix</h4>
+					<div class="ds-preview">
+						<div class="input-group">
+							<span class="input-prefix">|</span>
+							<input type="text" class="input" placeholder="Chave Pix">
+						</div>
+					</div>
+					<pre><code>&lt;div class="input-group"&gt;
+  &lt;span class="input-prefix"&gt;|&lt;/span&gt;
+  &lt;input type="text" class="input" placeholder="..."&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+
+				<div class="ds-component">
+					<h4>Number Stepper</h4>
+					<div class="ds-preview">
+						<div class="stepper">
+							<button class="stepper-btn">−</button>
+							<span class="stepper-value">12</span>
+							<button class="stepper-btn">+</button>
+						</div>
+					</div>
+					<pre><code>&lt;div class="stepper"&gt;
+  &lt;button class="stepper-btn"&gt;−&lt;/button&gt;
+  &lt;span class="stepper-value"&gt;12&lt;/span&gt;
+  &lt;button class="stepper-btn"&gt;+&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- CARDS -->
+			<section id="cards" class="ds-section">
+				<h2>Cards & Containers</h2>
+
+				<div class="ds-component">
+					<h4>Card Básico</h4>
+					<div class="ds-preview">
+						<div class="card">
+							<h3>Resumo de vendas</h3>
+							<div class="card-row">
+								<div>
+									<p class="label">Lucro bruto</p>
+									<p class="amount">R$ 620,92</p>
+								</div>
+								<div>
+									<p class="label">Lucro líquido</p>
+									<p class="amount">R$ 560,00</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ds-component">
+					<h4>Card com Info Row</h4>
+					<div class="ds-preview">
+						<div class="card">
+							<div class="info-row">
+								<div>
+									<p class="label">Seu cliente paga</p>
+									<p class="amount">R$ 3.160</p>
+									<p class="small-text">12x de R$ 316</p>
+								</div>
+								<div>
+									<p class="label">Você recebe</p>
+									<p class="amount" style="color: var(--orange);">R$ 2.790</p>
+									<p class="small-text">Na hora</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ds-component">
+					<h4>Alert/Warning Card</h4>
+					<div class="ds-preview">
+						<div class="card alert-card">
+							<p>A conta vinculada precisa ser da sua titularidade</p>
+							<button class="btn-help">?</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- BADGES -->
+			<section id="badges" class="ds-section">
+				<h2>Badges & Status</h2>
+
+				<div class="ds-component">
+					<h4>Status Badges</h4>
+					<div class="ds-preview">
+						<span class="badge badge-success">Aprovada</span>
+						<span class="badge badge-danger">Cancelada</span>
+						<span class="badge badge-pending">Pendente</span>
+					</div>
+					<pre><code>&lt;span class="badge badge-success"&gt;Aprovada&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Cancelada&lt;/span&gt;</code></pre>
+				</div>
+
+				<div class="ds-component">
+					<h4>Chip</h4>
+					<div class="ds-preview">
+						<span class="chip">Label</span>
+						<span class="chip">Status</span>
+					</div>
+					<pre><code>&lt;span class="chip"&gt;Label&lt;/span&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- NAVIGATION -->
+			<section id="navigation" class="ds-section">
+				<h2>Navigation</h2>
+
+				<div class="ds-component">
+					<h4>Bottom Navigation</h4>
+					<div class="ds-preview">
+						<nav class="bottom-nav">
+							<button class="nav-item">
+								<span class="nav-icon">🏠</span>
+								<span class="nav-label">Início</span>
+							</button>
+							<button class="nav-item">
+								<span class="nav-icon">♻️</span>
+								<span class="nav-label">Giro</span>
+							</button>
+							<button class="nav-item active">
+								<span class="nav-icon">💰</span>
+								<span class="nav-label">Vendas</span>
+							</button>
+						</nav>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
