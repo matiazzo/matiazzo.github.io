@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WhatsApp Web - Zippi</title>
+	<link rel="stylesheet" href="design-system.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: var(--font-family);
+			background: #fff;
+			display: flex;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.whatsapp-container {
+			display: flex;
+			width: 100%;
+			height: 100vh;
+		}
+
+		/* SIDEBAR - CONVERSAS */
+		.sidebar {
+			width: 360px;
+			background: var(--white);
+			border-right: 1px solid var(--border);
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+
+		.sidebar-header {
+			padding: var(--spacing-lg);
+			border-bottom: 1px solid var(--border);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.sidebar-header h1 {
+			font-size: var(--font-size-h2);
+			color: var(--dark);
+			margin: 0;
+		}
+
+		.sidebar-actions {
+			display: flex;
+			gap: var(--spacing-md);
+		}
+
+		.icon-btn {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: var(--gray-lighter);
+			border: none;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+		}
+
+		.icon-btn:hover {
+			background: var(--border);
+		}
+
+		.search-box {
+			padding: 0 var(--spacing-lg);
+			margin-bottom: var(--spacing-lg);
+		}
+
+		.search-input {
+			width: 100%;
+			padding: var(--spacing-md);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-full);
+			font-size: var(--font-size-body);
+			font-family: var(--font-family);
+			background: var(--gray-lighter);
+		}
+
+		.search-input:focus {
+			outline: none;
+			border-color: var(--orange);
+			background: var(--white);
+		}
+
+		.conversations {
+			flex: 1;
+			overflow-y: auto;
+			padding: 0 var(--spacing-md);
+		}
+
+		.conversation {
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-md);
+			padding: var(--spacing-md);
+			border-radius: var(--radius-lg);
+			cursor: pointer;
+			transition: all 0.3s ease;
+			margin-bottom: var(--spacing-sm);
+			border: 2px solid transparent;
+		}
+
+		.conversation:hover {
+			background: var(--gray-lighter);
+		}
+
+		.conversation.active {
+			background: rgba(255, 165, 0, 0.1);
+			border-color: var(--orange);
+		}
+
+		.avatar {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			background: var(--orange);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--white);
+			font-weight: var(--font-weight-bold);
+			font-size: 1.5rem;
+			flex-shrink: 0;
+			overflow: hidden;
+		}
+
+		.avatar img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.conversation-info {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.conversation-name {
+			font-weight: var(--font-weight-bold);
+			color: var(--dark);
+			font-size: var(--font-size-body);
+		}
+
+		.conversation-preview {
+			font-size: var(--font-size-small);
+			color: var(--gray);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.conversation-time {
+			font-size: var(--font-size-caption);
+			color: var(--gray);
+			text-align: right;
+		}
+
+		/* CHAT AREA */
+		.chat-area {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			background: #fff;
+		}
+
+		.chat-header {
+			padding: var(--spacing-lg);
+			border-bottom: 1px solid var(--border);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: var(--white);
+		}
+
+		.chat-header-info {
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-md);
+		}
+
+		.chat-header-avatar {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: var(--orange);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--white);
+			font-weight: var(--font-weight-bold);
+			overflow: hidden;
+		}
+
+		.chat-header-avatar img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.chat-header-text h2 {
+			font-size: var(--font-size-body);
+			color: var(--dark);
+			margin: 0;
+		}
+
+		.chat-header-text p {
+			font-size: var(--font-size-caption);
+			color: var(--gray);
+			margin: 0;
+		}
+
+		.chat-header-actions {
+			display: flex;
+			gap: var(--spacing-md);
+		}
+
+		.messages {
+			flex: 1;
+			overflow-y: auto;
+			padding: var(--spacing-lg);
+			background: #fff;
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-md);
+		}
+
+		.message {
+			display: flex;
+			animation: slideIn 0.3s ease;
+		}
+
+		@keyframes slideIn {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.message.sent {
+			justify-content: flex-end;
+		}
+
+		.message-bubble {
+			max-width: 60%;
+			padding: var(--spacing-md) var(--spacing-lg);
+			border-radius: var(--radius-lg);
+			word-wrap: break-word;
+			font-size: var(--font-size-body);
+			line-height: 1.4;
+		}
+
+		.message.received .message-bubble {
+			background: #f0f0f0;
+			color: var(--dark);
+			border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+		}
+
+		.message.sent .message-bubble {
+			background: var(--orange);
+			color: var(--white);
+			border-radius: var(--radius-lg) 0 var(--radius-lg) var(--radius-lg);
+		}
+
+		.message-time {
+			font-size: var(--font-size-caption);
+			color: var(--gray);
+			margin-top: var(--spacing-xs);
+		}
+
+		.message.received .message-time {
+			text-align: left;
+		}
+
+		.message.sent .message-time {
+			text-align: right;
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		.message-image {
+			max-width: 250px;
+			border-radius: var(--radius-lg);
+			overflow: hidden;
+		}
+
+		.message-image img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		/* INPUT AREA */
+		.input-area {
+			padding: var(--spacing-lg);
+			border-top: 1px solid var(--border);
+			background: var(--white);
+			display: flex;
+			gap: var(--spacing-md);
+			align-items: flex-end;
+		}
+
+		.input-actions {
+			display: flex;
+			gap: var(--spacing-sm);
+		}
+
+		.input-btn {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: var(--gray-lighter);
+			border: none;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+		}
+
+		.input-btn:hover {
+			background: var(--border);
+		}
+
+		.message-input {
+			flex: 1;
+			padding: var(--spacing-md);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-lg);
+			font-family: var(--font-family);
+			font-size: var(--font-size-body);
+			resize: none;
+			max-height: 100px;
+		}
+
+		.message-input:focus {
+			outline: none;
+			border-color: var(--orange);
+		}
+
+		.send-btn {
+			width: 40px;
+			height: 40px;
+			padding: 0;
+			background: var(--orange);
+			color: var(--white);
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+		}
+
+		.send-btn:hover {
+			background: var(--orange-dark);
+		}
+
+		@media (max-width: 1024px) {
+			.sidebar {
+				display: none;
+			}
+
+			.message-bubble {
+				max-width: 80%;
+			}
+		}
+
+		.empty-state {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			color: var(--gray);
+			text-align: center;
+		}
+
+		.empty-state-icon {
+			font-size: 4rem;
+			margin-bottom: var(--spacing-lg);
+		}
+	</style>
+</head>
+<body>
+	<div class="whatsapp-container">
+		<!-- SIDEBAR -->
+		<div class="sidebar">
+			<div class="sidebar-header">
+				<h1>WhatsApp</h1>
+				<div class="sidebar-actions">
+					<button class="icon-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="12" cy="12" r="1"/>
+							<circle cx="19" cy="12" r="1"/>
+							<circle cx="5" cy="12" r="1"/>
+						</svg>
+					</button>
+					<button class="icon-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M12 5v14M5 12h14"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="search-box">
+				<input type="text" class="search-input" placeholder="Pesquisar ou começar uma nova conversa">
+			</div>
+
+			<div class="conversations">
+				<div class="conversation active" onclick="selectConversation()">
+					<div class="avatar">
+						<img src="../img/app-icon_acai.png" alt="ziza" onerror="this.style.display='none'">
+						<span style="display: none;">Z</span>
+					</div>
+					<div class="conversation-info">
+						<div class="conversation-name">ziza</div>
+						<div class="conversation-preview">Oi! Tudo bem?</div>
+					</div>
+					<div class="conversation-time">14:30</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CHAT AREA -->
+		<div class="chat-area">
+			<!-- Header -->
+			<div class="chat-header">
+				<div class="chat-header-info">
+					<div class="chat-header-avatar">
+						<img src="../img/app-icon_acai.png" alt="ziza" onerror="this.style.display='none'">
+						<span style="display: none;">Z</span>
+					</div>
+					<div class="chat-header-text">
+						<h2>ziza</h2>
+						<p>Online</p>
+					</div>
+				</div>
+				<div class="chat-header-actions">
+					<button class="icon-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+						</svg>
+					</button>
+					<button class="icon-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polygon points="23 7 16 12 23 17 23 7"/>
+							<rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+						</svg>
+					</button>
+					<button class="icon-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="12" cy="12" r="1"/>
+							<circle cx="19" cy="12" r="1"/>
+							<circle cx="5" cy="12" r="1"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- Messages -->
+			<div class="messages" id="messagesContainer">
+				<div class="message received">
+					<div>
+						<div class="message-bubble">Oi! Tudo bem? 👋</div>
+						<div class="message-time">14:30</div>
+					</div>
+				</div>
+
+				<div class="message sent">
+					<div>
+						<div class="message-bubble">Oi! Tudo certo aqui, e você? 😊</div>
+						<div class="message-time">14:31</div>
+					</div>
+				</div>
+
+				<div class="message received">
+					<div>
+						<div class="message-bubble">Que legal! Como tá indo com o projeto?</div>
+						<div class="message-time">14:32</div>
+					</div>
+				</div>
+
+				<div class="message sent">
+					<div>
+						<div class="message-bubble">Tá saindo coisa interessante! Criei um chat com OCR</div>
+						<div class="message-time">14:33</div>
+					</div>
+				</div>
+
+				<div class="message sent">
+					<div>
+						<div class="message-bubble">E agora vou trabalhar em uma interface tipo WhatsApp</div>
+						<div class="message-time">14:34</div>
+					</div>
+				</div>
+
+				<div class="message received">
+					<div>
+						<div class="message-bubble">Que show! Quer que eu teste?</div>
+						<div class="message-time">14:35</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Input -->
+			<div class="input-area">
+				<div class="input-actions">
+					<button class="input-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+						</svg>
+					</button>
+					<button class="input-btn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+							<circle cx="8.5" cy="8.5" r="1.5"/>
+							<path d="M21 15l-5-5L5 21"/>
+						</svg>
+					</button>
+				</div>
+				<textarea class="message-input" id="messageInput" placeholder="Digite uma mensagem" rows="1"></textarea>
+				<button class="send-btn" onclick="sendMessage()">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.99101575 L3.03521743,10.4319088 C3.03521743,10.5890061 3.34915502,10.7461035 3.50612381,10.7461035 L16.6915026,11.5315905 C16.6915026,11.5315905 17.1624089,11.5315905 17.1624089,12.0028827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"/>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Auto-resize textarea
+		const messageInput = document.getElementById('messageInput');
+		messageInput.addEventListener('input', function() {
+			this.style.height = 'auto';
+			this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+		});
+
+		// Handle Enter key
+		messageInput.addEventListener('keypress', function(e) {
+			if (e.key === 'Enter' && !e.shiftKey) {
+				e.preventDefault();
+				sendMessage();
+			}
+		});
+
+		function sendMessage() {
+			const text = messageInput.value.trim();
+			if (!text) return;
+
+			const messagesContainer = document.getElementById('messagesContainer');
+			const messageDiv = document.createElement('div');
+			messageDiv.className = 'message sent';
+
+			const time = new Date().toLocaleTimeString('pt-BR', {
+				hour: '2-digit',
+				minute: '2-digit'
+			});
+
+			messageDiv.innerHTML = `
+				<div>
+					<div class="message-bubble">${escapeHtml(text)}</div>
+					<div class="message-time">${time}</div>
+				</div>
+			`;
+
+			messagesContainer.appendChild(messageDiv);
+			messageInput.value = '';
+			messageInput.style.height = 'auto';
+			messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+			// Simulate received message after 2 seconds
+			setTimeout(() => {
+				const receivedDiv = document.createElement('div');
+				receivedDiv.className = 'message received';
+				const receivedTime = new Date().toLocaleTimeString('pt-BR', {
+					hour: '2-digit',
+					minute: '2-digit'
+				});
+				receivedDiv.innerHTML = `
+					<div>
+						<div class="message-bubble">Que legal! 😄</div>
+						<div class="message-time">${receivedTime}</div>
+					</div>
+				`;
+				messagesContainer.appendChild(receivedDiv);
+				messagesContainer.scrollTop = messagesContainer.scrollHeight;
+			}, 2000);
+		}
+
+		function selectConversation() {
+			console.log('Conversation selected');
+		}
+
+		function escapeHtml(text) {
+			const div = document.createElement('div');
+			div.textContent = text;
+			return div.innerHTML;
+		}
+	</script>
+</body>
+</html>
