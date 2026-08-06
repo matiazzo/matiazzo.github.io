@@ -252,10 +252,10 @@
 					<div class="conversation-info">
 						<div class="conversation-row-top">
 							<span class="conversation-name">ziza</span>
-							<span class="conversation-time">14:31</span>
+							<span class="conversation-time">14:30</span>
 						</div>
 						<div class="conversation-row-bottom">
-							<span class="conversation-preview">Oi! Tudo bem sim! E você? 😊</span>
+							<span class="conversation-preview">Oi! Quer que eu te ajude a organizar seus gastos? 😊</span>
 						</div>
 					</div>
 				</div>
@@ -285,12 +285,7 @@
 			<div class="messages" id="messagesContainer">
 				<div class="message received">
 					<div class="message-content">
-						<div class="message-bubble">Oi! Tudo bem? 👋<span class="msg-meta">14:30</span></div>
-					</div>
-				</div>
-				<div class="message sent">
-					<div class="message-content">
-						<div class="message-bubble">Oi! Tudo bem sim! E você? 😊<span class="msg-meta">14:31 <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.405-2.272a.463.463 0 0 0-.336-.146.47.47 0 0 0-.343.146l-.291.312a.44.44 0 0 0-.14.325c0 .126.047.24.14.325l2.939 2.77a.628.628 0 0 0 .451.19c.183 0 .33-.062.44-.19l6.735-8.33a.464.464 0 0 0 .102-.324.457.457 0 0 0-.146-.324z" fill="#53bdeb"/><path d="M15.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-1.34-1.264-.626.773 1.815 1.71a.628.628 0 0 0 .45.19c.184 0 .33-.062.44-.19l6.735-8.33a.464.464 0 0 0 .102-.324.457.457 0 0 0-.146-.324z" fill="#53bdeb"/></svg></span></div>
+						<div class="message-bubble">Oi! Quer que eu te ajude a organizar seus gastos? Se quiser, é só me mandar uma foto aqui do seu caderno ou da sua planilha pra gente começar 😊<span class="msg-meta">14:30</span></div>
 					</div>
 				</div>
 			</div>
@@ -303,6 +298,9 @@
 				</button>
 				<button class="input-btn" onclick="promptForApiKey()" title="Configurar chave da Google Cloud Vision API">
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.778-7.778zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+				</button>
+				<button class="input-btn" onclick="promptForClaudeKey()" title="Configurar chave da Claude API (organiza o texto extraído)">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
 				</button>
 				<input type="file" id="imageUpload" accept="image/*">
 				<textarea class="message-input" id="messageInput" placeholder="Digite uma mensagem" rows="1"></textarea>
@@ -342,6 +340,9 @@
 					imageUpload.value = '';
 					return;
 				}
+			}
+			if (!getClaudeKey()) {
+				promptForClaudeKey();
 			}
 
 			const reader = new FileReader();
@@ -444,6 +445,56 @@
 			return (apiResult && apiResult.fullTextAnnotation && apiResult.fullTextAnnotation.text || '').trim();
 		}
 
+		const CLAUDE_STORAGE_KEY = 'claude_api_key';
+		const CLAUDE_MODEL = 'claude-haiku-4-5-20251001';
+
+		function getClaudeKey() {
+			return localStorage.getItem(CLAUDE_STORAGE_KEY) || '';
+		}
+
+		function promptForClaudeKey() {
+			const current = getClaudeKey();
+			const key = prompt('Cole sua chave da Claude API (Anthropic) para organizar o texto extraído:', current);
+			if (key === null) return;
+			if (key.trim()) {
+				localStorage.setItem(CLAUDE_STORAGE_KEY, key.trim());
+				alert('Chave da Claude API salva neste navegador.');
+			} else {
+				localStorage.removeItem(CLAUDE_STORAGE_KEY);
+			}
+		}
+
+		async function organizeWithClaude(rawText) {
+			const apiKey = getClaudeKey();
+			if (!apiKey) return null;
+
+			const response = await fetch('https://api.anthropic.com/v1/messages', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'x-api-key': apiKey,
+					'anthropic-version': '2023-06-01',
+					'anthropic-dangerous-direct-browser-access': 'true'
+				},
+				body: JSON.stringify({
+					model: CLAUDE_MODEL,
+					max_tokens: 1024,
+					system: 'Você recebe texto bagunçado, extraído por OCR, de anotações manuscritas ou planilhas de vendas/gastos de um microempreendedor. Organize em um resumo curto e legível em português, com itens, valores e datas quando existirem, e um total no final se der para calcular. Use apenas os dados presentes no texto, não invente nada. Formate em texto simples com quebras de linha, sem markdown.',
+					messages: [
+						{ role: 'user', content: `Organize estas anotações extraídas por OCR:\n\n${rawText}` }
+					]
+				})
+			});
+
+			const data = await response.json();
+			if (!response.ok) {
+				const message = (data.error && data.error.message) || `Falha ao consultar a Claude API (HTTP ${response.status})`;
+				throw new Error(message);
+			}
+
+			return (data.content && data.content[0] && data.content[0].text || '').trim();
+		}
+
 		async function processOCR(imageData) {
 			const botMessage = document.createElement('div');
 			botMessage.className = 'message received';
@@ -452,16 +503,31 @@
 			messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
 			try {
-				const text = await recognizeWithGoogleVision(imageData);
+				const rawText = await recognizeWithGoogleVision(imageData);
 				const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 				const meta = `<span class="msg-meta">${time}</span>`;
 
-				if (!text) {
+				if (!rawText) {
 					botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📸 OCR:</strong> Nenhum texto detectado</div>${meta}`;
+					if (conversationPreview) conversationPreview.textContent = '📸 OCR';
 				} else {
-					botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📸 Texto encontrado:</strong><br>${escapeHtml(text)}</div>${meta}`;
+					let organized = null;
+					let organizeError = null;
+					try {
+						organized = await organizeWithClaude(rawText);
+					} catch (err) {
+						organizeError = err.message;
+					}
+
+					if (organized) {
+						botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📊 Resumo organizado:</strong><br>${escapeHtml(organized).replace(/\n/g, '<br>')}</div>${meta}`;
+						if (conversationPreview) conversationPreview.textContent = '📊 ' + organized.slice(0, 30);
+					} else {
+						const note = organizeError ? `<br><em>(não consegui organizar automaticamente: ${escapeHtml(organizeError)})</em>` : '';
+						botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📸 Texto encontrado:</strong><br>${escapeHtml(rawText)}${note}</div>${meta}`;
+						if (conversationPreview) conversationPreview.textContent = '📸 ' + rawText.slice(0, 30);
+					}
 				}
-				if (conversationPreview) conversationPreview.textContent = text ? '📸 ' + text.slice(0, 30) : '📸 OCR';
 				if (conversationTime) conversationTime.textContent = time;
 			} catch (error) {
 				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text">❌ ${escapeHtml(error.message || 'Erro ao processar imagem')}</div>`;
