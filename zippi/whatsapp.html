@@ -164,6 +164,12 @@
 		.message-image { max-width: 280px; border-radius: 6px; overflow: hidden; margin-bottom: 4px; }
 		.message-image img { width: 100%; height: auto; display: block; }
 		.ocr-text { font-size: 13px; }
+		.quick-replies { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+		.quick-reply-btn {
+			background: #fff; border: 1px solid #00a884; color: #008069; border-radius: 20px;
+			padding: 6px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+		}
+		.quick-reply-btn:hover { background: #d9fdd3; }
 		.loading { display: inline-flex; gap: 4px; align-items: center; padding: 2px 4px; }
 		.loading-dot { width: 7px; height: 7px; border-radius: 50%; background: #8696a0; animation: bounce 1.4s infinite; }
 		.loading-dot:nth-child(2) { animation-delay: 0.2s; }
@@ -359,7 +365,9 @@
 			imageUpload.value = '';
 		});
 
-		function sendMessage() {
+		let pendingOrganize = null;
+
+		async function sendMessage() {
 			const text = messageInput.value.trim();
 			if (!text) return;
 
@@ -368,9 +376,31 @@
 			messageInput.style.height = 'auto';
 			updateSendButtonIcon();
 
+			if (pendingOrganize) {
+				const { rawText, rawEmoji, rawLabel } = pendingOrganize;
+				pendingOrganize = null;
+				const preference = /cliente/i.test(text) ? 'cliente' : (/dia/i.test(text) ? 'dia' : null);
+				const botMessage = createLoadingBotMessage();
+				try {
+					const organized = await organizeWithClaude(rawText, preference);
+					renderOrganizedResult(botMessage, organized, rawText, rawEmoji, rawLabel);
+				} catch (error) {
+					const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+					const note = `<br><em>(não consegui organizar automaticamente: ${escapeHtml(error.message)})</em>`;
+					botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>${rawEmoji} ${rawLabel}:</strong><br>${escapeHtml(rawText)}${note}</div><span class="msg-meta">${time}</span>`;
+					messagesContainer.scrollTop = messagesContainer.scrollHeight;
+				}
+				return;
+			}
+
 			setTimeout(() => {
 				addMessage('Que legal! 😄', 'received', null);
 			}, 2000);
+		}
+
+		function answerOrganizePreference(choice) {
+			messageInput.value = choice === 'cliente' ? 'Por cliente' : 'Por dia';
+			sendMessage();
 		}
 
 		const MIC_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
@@ -590,9 +620,15 @@
 			}
 		}
 
-		async function organizeWithClaude(rawText) {
+		async function organizeWithClaude(rawText, preference) {
 			const apiKey = getClaudeKey();
 			if (!apiKey) return null;
+
+			const groupingInstruction = preference === 'cliente'
+				? 'Agrupe as informações por cliente/pessoa.'
+				: preference === 'dia'
+					? 'Agrupe as informações por dia/data.'
+					: 'Agrupe as informações da forma que fizer mais sentido para os dados.';
 
 			const response = await fetch('https://api.anthropic.com/v1/messages', {
 				method: 'POST',
@@ -607,7 +643,7 @@
 					max_tokens: 1024,
 					system: 'Você recebe texto bruto, extraído automaticamente por OCR de anotações manuscritas/planilhas ou por transcrição de áudio de um relato falado, sobre vendas/gastos de um microempreendedor. Organize em um resumo curto e legível em português, com itens, valores e datas quando existirem, e um total no final se der para calcular. Use apenas os dados presentes no texto, não invente nada. Formate em texto simples com quebras de linha, sem markdown.',
 					messages: [
-						{ role: 'user', content: `Organize estas anotações (texto bruto extraído automaticamente):\n\n${rawText}` }
+						{ role: 'user', content: `Organize estas anotações (texto bruto extraído automaticamente). ${groupingInstruction}\n\n${rawText}` }
 					]
 				})
 			});
@@ -630,31 +666,41 @@
 			return botMessage;
 		}
 
-		async function renderStructuredReply(botMessage, rawText, rawEmoji, rawLabel) {
+		function renderOrganizedResult(botMessage, organized, rawText, rawEmoji, rawLabel) {
+			const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+			const meta = `<span class="msg-meta">${time}</span>`;
+
+			if (organized) {
+				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📊 Resumo organizado:</strong><br>${escapeHtml(organized).replace(/\n/g, '<br>')}</div>${meta}`;
+				if (conversationPreview) conversationPreview.textContent = '📊 ' + organized.slice(0, 30);
+			} else {
+				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>${rawEmoji} ${rawLabel}:</strong><br>${escapeHtml(rawText)}</div>${meta}`;
+				if (conversationPreview) conversationPreview.textContent = `${rawEmoji} ` + rawText.slice(0, 30);
+			}
+			if (conversationTime) conversationTime.textContent = time;
+			messagesContainer.scrollTop = messagesContainer.scrollHeight;
+		}
+
+		function askOrganizePreference(botMessage, rawText, rawEmoji, rawLabel) {
 			const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 			const meta = `<span class="msg-meta">${time}</span>`;
 
 			if (!rawText) {
 				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>${rawEmoji} ${rawLabel}:</strong> Nenhum texto detectado</div>${meta}`;
 				if (conversationPreview) conversationPreview.textContent = `${rawEmoji} ${rawLabel}`;
-			} else {
-				let organized = null;
-				let organizeError = null;
-				try {
-					organized = await organizeWithClaude(rawText);
-				} catch (err) {
-					organizeError = err.message;
-				}
-
-				if (organized) {
-					botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>📊 Resumo organizado:</strong><br>${escapeHtml(organized).replace(/\n/g, '<br>')}</div>${meta}`;
-					if (conversationPreview) conversationPreview.textContent = '📊 ' + organized.slice(0, 30);
-				} else {
-					const note = organizeError ? `<br><em>(não consegui organizar automaticamente: ${escapeHtml(organizeError)})</em>` : '';
-					botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text"><strong>${rawEmoji} ${rawLabel}:</strong><br>${escapeHtml(rawText)}${note}</div>${meta}`;
-					if (conversationPreview) conversationPreview.textContent = `${rawEmoji} ` + rawText.slice(0, 30);
-				}
+				if (conversationTime) conversationTime.textContent = time;
+				messagesContainer.scrollTop = messagesContainer.scrollHeight;
+				return;
 			}
+
+			pendingOrganize = { rawText, rawEmoji, rawLabel };
+			botMessage.querySelector('.message-bubble').innerHTML =
+				`Encontrei as informações! Quer que eu organize por <strong>cliente</strong> ou por <strong>dia</strong>?` +
+				`<div class="quick-replies">
+					<button class="quick-reply-btn" onclick="answerOrganizePreference('cliente')">Por cliente</button>
+					<button class="quick-reply-btn" onclick="answerOrganizePreference('dia')">Por dia</button>
+				</div>${meta}`;
+			if (conversationPreview) conversationPreview.textContent = 'Por cliente ou por dia?';
 			if (conversationTime) conversationTime.textContent = time;
 			messagesContainer.scrollTop = messagesContainer.scrollHeight;
 		}
@@ -663,7 +709,7 @@
 			const botMessage = createLoadingBotMessage();
 			try {
 				const rawText = await recognizeWithGoogleVision(imageData);
-				await renderStructuredReply(botMessage, rawText, '📸', 'Texto encontrado');
+				askOrganizePreference(botMessage, rawText, '📸', 'Texto encontrado');
 			} catch (error) {
 				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text">❌ ${escapeHtml(error.message || 'Erro ao processar imagem')}</div>`;
 				messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -674,7 +720,7 @@
 			const botMessage = createLoadingBotMessage();
 			try {
 				const rawText = await transcribeWithGoogleSpeech(audioDataUrl, mimeType);
-				await renderStructuredReply(botMessage, rawText, '🎤', 'Transcrição');
+				askOrganizePreference(botMessage, rawText, '🎤', 'Transcrição');
 			} catch (error) {
 				botMessage.querySelector('.message-bubble').innerHTML = `<div class="ocr-text">❌ ${escapeHtml(error.message || 'Erro ao processar áudio')}</div>`;
 				messagesContainer.scrollTop = messagesContainer.scrollHeight;
